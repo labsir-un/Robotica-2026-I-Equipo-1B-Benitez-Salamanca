@@ -55,7 +55,11 @@ Lab01_Robotica/
 
 ## Herramienta Diseñada
 
-Se diseñó y construyó un **porta-marcador** para fijar al flanche del robot IRB 140. Los datos del TCP calibrado (Tooldata) son:
+Se diseñó y construyó un **porta-marcador** para fijar al flanche del robot IRB 140. Este se diseña para impresión 3D en ácido poliláctico (PLA) y está compuesto de 2 partes, una base con la geometría de fijación adecuada para el flanche y una extensión cilíndrica con la cavidad perfecta para el marcador; como segunda pieza complementaria se diseña una tapa que permitirá posicionar el marcador dentro de la cavidad.
+
+
+
+Los datos del TCP calibrado (Tooldata) son:
 
 ```rapid
 PERS tooldata Marcador := [
