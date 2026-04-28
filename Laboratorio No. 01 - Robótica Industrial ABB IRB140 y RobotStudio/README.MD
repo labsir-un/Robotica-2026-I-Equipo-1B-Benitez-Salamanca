@@ -8,8 +8,8 @@
 
 | Nombre | URL del Repositorio |
 |--------|-------------------|
-| Julian Benitez | *(agregar URL)* |
-| Juan Salamanca | *(agregar URL)* |
+| Julian Benitez | https://github.com/JulianI3 |
+| Juan Salamanca | https://github.com/JuanSalan |
 
 ---
 
@@ -55,8 +55,31 @@ Lab01_Robotica/
 
 ## Herramienta Diseñada
 
-Se diseñó y construyó un **porta-marcador** para fijar al flanche del robot IRB 140. Los datos del TCP calibrado (Tooldata) son:
+Se diseñó y construyó un **porta-marcador** para fijar al flanche del robot IRB 140. Este se diseña para impresión 3D en ácido poliláctico (PLA) y está compuesto de 2 partes, una base con la geometría de fijación adecuada para el flanche y una extensión cilíndrica con la cavidad perfecta para el marcador, esta posee redondeos en bordes agudos para disminuir concentradores de esfuerzos además de unas pestañas en la punta del cilindro para la postura de la tapa y fijación del marcador.
 
+
+
+<p align="center">
+  <img src="Diagramas/Images/Base_modelado.png" width="500"><br>
+  <em>Modelado base del porta-marcador</em>
+</p>
+
+Como segunda pieza complementaria se diseña una tapa que permitirá posicionar el marcador dentro de la cavidad, esta posee la geometría coincidente para acoplarse correctamente con las pestañas de la pieza anterior.
+
+<p align="center">
+  <img src="Diagramas/Images/Tapa_modelado.png" width="500"><br>
+  <em>Modelado tapa del porta-marcador</em>
+</p>
+
+Luego de la impresión 3D las piezas identicas al modelado se observan a continuación.
+
+<p align="center">
+  <img src="Diagramas/Images/Porta-marcador ensamblado.jpeg" width="500"><br>
+  <em>Porta-marcador impreso y ensamblado</em>
+</p>
+
+
+Los datos del TCP calibrado (Tooldata) son:
 ```rapid
 PERS tooldata Marcador := [
   TRUE,
@@ -189,6 +212,25 @@ Si DI_02 = 1:
 | `Path_Home` | Lleva el robot a la posición home global con `tool0` y `wobj0`. |
 
 ---
+
+### Smart Components
+
+Para la simulación se utilizó herramientas de control y operación del tipo smart component, estas permitian implementar una lógica tal que permitiese realizar una óptima ejecución del problema.  El diagrama de flujo de operación es el siguiente.
+
+<p align="center">
+  <img src="Diagramas/Images/smart_components.png" width="700"><br>
+  <em>Smart components</em>
+</p>
+
+El funcionamiento correponde al siguiente
+1. El sistema inicia en estado de reposo con las salidas en 0.
+2. Se reciben las señales de entrada (DI_01 y DI_02) que habilitan la lógica del sistema.
+3. Las señales de entrada pasan por la compuerta lógica AND, determinando si se cumplen las condiciones para activar el movimiento; las condiciones corresponen a una salida nula de la detección de los sensores junto con la activación de la señal de entrada.
+4. Se habilita el LinearMover, el objeto comienza su desplazamiento (simulación de banda transportadora).
+5. Durante el movimiento, el objeto pasa por el primer sensor (PlaneSensor1); al detectar el objeto genera una señal activa que permite la ejecución del programa de movimiento del ABB además de activar una señal de salida; esta misma señal detiene el movimiento ejecutado por el LinearMover puesto que anula la primera compuerta AND.
+6. Una vez culminado el movimiento del robot se activa una segunda señal de entrada para continuar ejecutando el movimiento de la banda transportadora.
+7. El objeto continúa su trayectoria hasta el segundo sensor (PlaneSensor_2); al detectar el objeto genera una segunda señal de salida y se anula la señal de la compuerta AND para anular nuevamente el movimiento del LinearMover, culminando la ejecución del programa.
+
 
 
 ## Referencias
