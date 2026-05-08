@@ -20,6 +20,8 @@ En este laboratorio se trabajó en una breve caracterización de operación del 
 ---
 ## Tabla comparativa de especificaciones entre robot manipulador Motoman MH6 y IRB 140
 
+La siguiente tabla muestra las características técnicas de los 2 Robots manipuladores utilizados en los últimos laboratorios
+
 | Característica | Motoman MH6 | IRB 140 |
 |---|---|---|
 | Carga útil | 6 kg | 6 kg |
@@ -27,9 +29,9 @@ En este laboratorio se trabajó en una breve caracterización de operación del 
 | Número de grados de libertad | 6 | 6 |
 | Peso | 130 kg | 98 kg |
 | Repetibilidad | ±0,08 mm | ±0,08 mm |
-| Velocidad eje 1 / S | 140 °/sec | 200 °/sec |
-| Velocidad eje 2 / L | 130 °/sec | 200 °/sec |
-| Velocidad eje 3 / U | 135 °/sec | 260 °/sec |
-| Velocidad eje 4 / R | 270 °/sec | 360 °/sec |
-| Velocidad eje 5 / B | 270 °/sec | 360 °/sec |
-| Velocidad eje 6 / T | 400 °/sec | 450 °/sec |
+| Velocidad eje S / 1 | 140 °/sec | 200 °/sec |
+| Velocidad eje L / 2 | 130 °/sec | 200 °/sec |
+| Velocidad eje U / 3 | 135 °/sec | 260 °/sec |
+| Velocidad eje R / 4 | 270 °/sec | 360 °/sec |
+| Velocidad eje B / 5 | 270 °/sec | 360 °/sec |
+| Velocidad eje T / 6 | 400 °/sec | 450 °/sec |
