@@ -40,7 +40,7 @@ La siguiente tabla muestra las características técnicas de los 2 Robots manipu
 
 | | |
 |---|---|
-| <img src="Diagramas/Imagenes/Ejes manipulador Motoman MH6.png" height="350"> | <img src="Diagramas/Imagenes/Ejes%20manipulador%20IRB%20140.png" height="350"> |
+| <img src="Diagramas/Imagenes/Ejes manipulador Motoman MH6.png" height="550"> | <img src="Diagramas/Imagenes/Ejes%20manipulador%20IRB%20140.png" height="350"> |
 | **(a)** Notación de ejes para el manipulador Motoman MH6 | **(b)** Notación de ejes para el manipulador IRB 140 |
 
 </div>
