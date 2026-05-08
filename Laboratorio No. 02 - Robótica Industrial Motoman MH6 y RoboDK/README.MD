@@ -51,7 +51,7 @@ La siguiente tabla muestra las características técnicas de los 2 Robots manipu
 <td align="center">
 <img src="Diagramas/Imagenes/Ejes%20manipulador%20IRB%20140.png"
      width="300"
-     height="350">
+     height="400">
 <br>
 <b>(b)</b> Notación de ejes para el manipulador IRB 140
 </td>
