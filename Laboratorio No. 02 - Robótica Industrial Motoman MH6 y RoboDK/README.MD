@@ -29,9 +29,9 @@ La siguiente tabla muestra las características técnicas de los 2 Robots manipu
 | Número de grados de libertad | 6 | 6 |
 | Peso | 130 kg | 98 kg |
 | Repetibilidad | ±0,08 mm | ±0,08 mm |
-| Velocidad eje S / 1 | 140 °/sec | 200 °/sec |
-| Velocidad eje L / 2 | 130 °/sec | 200 °/sec |
-| Velocidad eje U / 3 | 135 °/sec | 260 °/sec |
-| Velocidad eje R / 4 | 270 °/sec | 360 °/sec |
-| Velocidad eje B / 5 | 270 °/sec | 360 °/sec |
-| Velocidad eje T / 6 | 400 °/sec | 450 °/sec |
+| Velocidad eje S / A | 140 °/sec | 200 °/sec |
+| Velocidad eje L / B | 130 °/sec | 200 °/sec |
+| Velocidad eje U / C | 135 °/sec | 260 °/sec |
+| Velocidad eje R / D | 270 °/sec | 360 °/sec |
+| Velocidad eje B / E | 270 °/sec | 360 °/sec |
+| Velocidad eje T / F | 400 °/sec | 450 °/sec |
