@@ -35,3 +35,20 @@ La siguiente tabla muestra las características técnicas de los 2 Robots manipu
 | Velocidad eje R / D | 270 °/sec | 360 °/sec |
 | Velocidad eje B / E | 270 °/sec | 360 °/sec |
 | Velocidad eje T / F | 400 °/sec | 450 °/sec |
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="Diagramas/Imagenes/Ejes manipulador Motoman MH6.png" height="250"><br>
+      <sub><b>(a)</b> Leyenda imagen 1</sub>
+    </td>
+    <td align="center">
+      <img src="Diagramas/Imagenes/Ejes manipulador IRB 140.png" height="250"><br>
+      <sub><b>(b)</b> Leyenda imagen 2</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <b>Figura:</b> Leyenda general de ambas imágenes.
+</p>
