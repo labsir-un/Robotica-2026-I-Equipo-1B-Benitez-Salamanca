@@ -43,7 +43,7 @@ La siguiente tabla muestra las características técnicas de los 2 Robots manipu
 <table>
   <tr>
     <td align="center">
-      <img src="Diagramas/Imagenes/Ejes manipulador Motoman MH6.png" height="550"><br>
+      <img src="Diagramas/Imagenes/Ejes manipulador Motoman MH6.png" height="950"><br>
       <sub><b>(a)</b> Notación de ejes para el manipulador Motoman MH6</sub>
     </td>
     <td align="center">
