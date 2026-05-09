@@ -388,6 +388,14 @@ EJECUCIÓN DESDE RoboDK
 
 ---
 
+# Diagrama de flujo 
+
+##  inicialización y conexión:
+[Diagrama de flujo inicialización y conexión](Diagramas/Imagenes/robodk_SetUP.pdf)
+
+##  Rutinas Principales (Rosa polar y nombres)
+
+[Diagrama de flujo Rosa polar y nombres](Diagramas/Imagenes/robodk_tasks.pdf)
 ## Referencias
 
 - Yaskawa Electric Corporation. *Motoman MH6 Instructions*. Documento: HW1481406.
