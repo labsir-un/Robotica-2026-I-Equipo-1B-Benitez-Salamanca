@@ -246,7 +246,8 @@ Cada pulsación de `[FAST]` sube un nivel; cada pulsación de `[SLOW]` baja un n
 
 El nivel de velocidad activo se identifica en el teach pendant en la parte superior de la pantalla en el "status display area" como se muestra a continuación:
 
-
+![Pantalla del Teach pendant](Diagramas/Imagenes/pantalla.png)
+![Pantalla del Teach pendant](Diagramas/Imagenes/pantalla.png)
 ### Recomendaciones de uso
 
 - Iniciar **siempre en `INCHING` o `LOW`** al comienzo de cada sesión o al moverse a una zona desconocida del espacio de trabajo.
