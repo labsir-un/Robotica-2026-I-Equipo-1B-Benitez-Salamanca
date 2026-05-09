@@ -107,6 +107,10 @@ Antes de cualquier movimiento manual se debe seguir la siguiente secuencia:
 4. Verificar que no haya **alarmas activas**. Si existen, resolverlas antes de continuar.
 5. Confirmar el estado inicial: servos en `SERVO OFF`, modo `TEACH`, velocidad de jog en nivel mínimo.
 
+Todos los botones que son mencionados en estos procedimientos se pueden observar en la siguiente imagen
+
+![Teach pendant DX100](Diagramas/Imagenes/Teach.png)
+
 ### Activación del modo TEACH y habilitación de servos
 
 El modo **TEACH** es el único en que se pueden realizar movimientos manuales mediante el teach pendant.
