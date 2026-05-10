@@ -131,6 +131,52 @@ La siguiente tabla muestra las características técnicas de los 2 Robots manipu
 
 La configuración Home 1 del Motoman MH6 corresponde a una postura “guardada” o recogida del manipulador, en la cual el brazo permanece agachado y compacto. Esta posición se utiliza normalmente al finalizar una rutina o cuando el robot se encuentra fuera de operación, ya que reduce el espacio ocupado y disminuye el riesgo de interferencias en el área de trabajo.
 
+Los valores de la posición de cada una de las 6 articulaciones del Motoman MH6 se muestran a continuación.
+
+<table align="center">
+  <tr>
+    <th align="center">Eje</th>
+    <th align="center">Origin</th>
+    <th align="center">Current</th>
+  </tr>
+
+  <tr>
+    <td align="center">S</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+
+  <tr>
+    <td align="center">L</td>
+    <td align="center">-115290</td>
+    <td align="center">-115291</td>
+  </tr>
+
+  <tr>
+    <td align="center">U</td>
+    <td align="center">-111622</td>
+    <td align="center">-111623</td>
+  </tr>
+
+  <tr>
+    <td align="center">R</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+
+  <tr>
+    <td align="center">B</td>
+    <td align="center">42647</td>
+    <td align="center">42648</td>
+  </tr>
+
+  <tr>
+    <td align="center">T</td>
+    <td align="center">1392</td>
+    <td align="center">1392</td>
+  </tr>
+</table>
+
 Por otro lado, la configuración Home 2 corresponde a una postura vertical, donde el manipulador queda elevado y con mayor libertad de movimiento. Esta posición se emplea antes de montar piezas o realizar tareas de manipulación, facilitando el desplazamiento manual y el acceso al espacio de trabajo del robot.
 
 
