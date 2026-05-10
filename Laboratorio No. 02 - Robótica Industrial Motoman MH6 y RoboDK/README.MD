@@ -548,7 +548,85 @@ EJECUCIÓN DESDE RoboDK
 
 ---
 
-# Diagrama de flujo 
+##Cuadro comparativo entre Robotstudio y RoboDK
+
+<table align="center">
+  <tr>
+    <th align="center">Característica</th>
+    <th align="center">RobotStudio</th>
+    <th align="center">RoboDK</th>
+  </tr>
+
+  <tr>
+    <td align="center">Desarrollador</td>
+    <td align="center">ABB</td>
+    <td align="center">RoboDK Inc.</td>
+  </tr>
+
+  <tr>
+    <td align="center">Compatibilidad de robots</td>
+    <td align="center">Exclusivo para robots ABB</td>
+    <td align="center">Compatible con más de 80 marcas y 1200 robots</td>
+  </tr>
+
+  <tr>
+    <td align="center">Lenguaje principal</td>
+    <td align="center">RAPID</td>
+    <td align="center">Python, API y postprocesadores múltiples</td>
+  </tr>
+
+  <tr>
+    <td align="center">Programación offline</td>
+    <td align="center">Sí</td>
+    <td align="center">Sí</td>
+  </tr>
+
+  <tr>
+    <td align="center">Simulación de trayectorias</td>
+    <td align="center">Avanzada y específica para ABB</td>
+    <td align="center">Flexible y multiplataforma</td>
+  </tr>
+
+  <tr>
+    <td align="center">Facilidad de uso</td>
+    <td align="center">Interfaz más técnica y especializada</td>
+    <td align="center">Interfaz intuitiva y amigable</td>
+  </tr>
+
+  <tr>
+    <td align="center">Integración CAD/CAM</td>
+    <td align="center">Sí, principalmente con herramientas ABB</td>
+    <td align="center">Amplia integración con software CAD/CAM</td>
+  </tr>
+
+  <tr>
+    <td align="center">Control de robot físico</td>
+    <td align="center">Excelente integración con controladores ABB</td>
+    <td align="center">Compatible con múltiples controladores industriales</td>
+  </tr>
+
+  <tr>
+    <td align="center">Aplicaciones típicas</td>
+    <td align="center">Automatización industrial ABB, validación y puesta en marcha virtual</td>
+    <td align="center">Educación, simulación industrial, manufactura y programación multirobot</td>
+  </tr>
+
+  <tr>
+    <td align="center">Ventaja principal</td>
+    <td align="center">Alta fidelidad y control avanzado sobre robots ABB</td>
+    <td align="center">Versatilidad y compatibilidad con múltiples marcas</td>
+  </tr>
+
+  <tr>
+    <td align="center">Limitación principal</td>
+    <td align="center">Solo funciona con robots ABB</td>
+    <td align="center">Menor profundidad de configuración específica por fabricante</td>
+  </tr>
+</table>
+
+---
+
+## Diagrama de flujo 
 
 ##  inicialización y conexión:
 [Diagrama de flujo inicialización y conexión](Diagramas/Imagenes/robodk_SetUP.pdf)
