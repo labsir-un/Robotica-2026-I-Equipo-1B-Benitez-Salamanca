@@ -400,7 +400,7 @@ EJECUCIÓN DESDE RoboDK
 ---
 
 ## Plano de Planta
-[Plano de Planta del manipulador Motoman MH6](Diagramas/Imagenes/Plano de planta Motoman.pdf)
+[Plano de Planta del manipulador Motoman MH6](Diagramas/Plano de planta Motoman.pdf)
 
 ## Referencias
 
