@@ -548,7 +548,7 @@ EJECUCIÓN DESDE RoboDK
 
 ---
 
-##Cuadro comparativo entre Robotstudio y RoboDK
+## Cuadro comparativo entre Robotstudio y RoboDK
 
 <table align="center">
   <tr>
