@@ -29,6 +29,18 @@ La siguiente tabla muestra las características técnicas de los 2 Robots manipu
   </tr>
 
   <tr>
+    <td align="center">Fabricante</td>
+    <td align="center">Yaskawa Motoman</td>
+    <td align="center">ABB</td>
+  </tr>
+
+  <tr>
+    <td align="center">Controlador</td>
+    <td align="center">DX100</td>
+    <td align="center">IRC5</td>
+  </tr>
+
+  <tr>
     <td align="center">Carga útil</td>
     <td align="center">6 kg</td>
     <td align="center">6 kg</td>
