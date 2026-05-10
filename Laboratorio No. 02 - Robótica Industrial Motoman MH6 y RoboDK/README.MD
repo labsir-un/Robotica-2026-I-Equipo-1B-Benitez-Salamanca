@@ -396,6 +396,12 @@ EJECUCIÓN DESDE RoboDK
 ##  Rutinas Principales (Rosa polar y nombres)
 
 [Diagrama de flujo Rosa polar y nombres](Diagramas/Imagenes/robodk_tasks.pdf)
+
+---
+
+## Plano de Planta
+[Plano de Planta del manipulador Motoman MH6](Diagramas/Imagenes/Plano de planta Motoman.pdf)
+
 ## Referencias
 
 - Yaskawa Electric Corporation. *Motoman MH6 Instructions*. Documento: HW1481406.
