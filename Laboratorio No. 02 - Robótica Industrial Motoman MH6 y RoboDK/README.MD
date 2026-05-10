@@ -560,7 +560,7 @@ EJECUCIÓN DESDE RoboDK
 
 ---
 
-## Cuadro comparativo entre Robotstudio y RoboDK
+## Cuadro comparativo entre RobotStudio y RoboDK
 
 <table align="center">
   <tr>
@@ -576,15 +576,15 @@ EJECUCIÓN DESDE RoboDK
   </tr>
 
   <tr>
-    <td align="center">Compatibilidad de robots</td>
+    <td align="center">Compatibilidad</td>
     <td align="center">Exclusivo para robots ABB</td>
-    <td align="center">Compatible con más de 80 marcas y 1200 robots</td>
+    <td align="center">Compatible con múltiples fabricantes de robots</td>
   </tr>
 
   <tr>
-    <td align="center">Lenguaje principal</td>
+    <td align="center">Lenguaje de programación</td>
     <td align="center">RAPID</td>
-    <td align="center">Python, API y postprocesadores múltiples</td>
+    <td align="center">Python y API multilenguaje</td>
   </tr>
 
   <tr>
@@ -594,48 +594,65 @@ EJECUCIÓN DESDE RoboDK
   </tr>
 
   <tr>
-    <td align="center">Simulación de trayectorias</td>
-    <td align="center">Avanzada y específica para ABB</td>
-    <td align="center">Flexible y multiplataforma</td>
+    <td align="center">Interfaz gráfica</td>
+    <td align="center">Más desarrollada, moderna y especializada</td>
+    <td align="center">Más simple y ligera</td>
   </tr>
 
   <tr>
-    <td align="center">Facilidad de uso</td>
-    <td align="center">Interfaz más técnica y especializada</td>
-    <td align="center">Interfaz intuitiva y amigable</td>
+    <td align="center">Herramientas de modelado</td>
+    <td align="center">Amplias capacidades de modelado y simulación industrial</td>
+    <td align="center">Herramientas de simulación enfocadas en facilidad y rapidez</td>
   </tr>
 
   <tr>
-    <td align="center">Integración CAD/CAM</td>
-    <td align="center">Sí, principalmente con herramientas ABB</td>
-    <td align="center">Amplia integración con software CAD/CAM</td>
+    <td align="center">Movilidad e interacción en entorno 3D</td>
+    <td align="center">Muy fluida y optimizada para entornos industriales complejos</td>
+    <td align="center">Adecuada y funcional para simulación general</td>
   </tr>
 
   <tr>
-    <td align="center">Control de robot físico</td>
-    <td align="center">Excelente integración con controladores ABB</td>
-    <td align="center">Compatible con múltiples controladores industriales</td>
+    <td align="center">Entradas y salidas digitales</td>
+    <td align="center">Alta integración para lógica industrial y automatización</td>
+    <td align="center">Disponible, pero menos orientada a automatización industrial avanzada</td>
+  </tr>
+
+  <tr>
+    <td align="center">Facilidad de programación</td>
+    <td align="center">RAPID es intuitivo y muy eficiente para robots ABB</td>
+    <td align="center">Python facilita el desarrollo y automatización personalizada</td>
+  </tr>
+
+  <tr>
+    <td align="center">Disponibilidad de librerías</td>
+    <td align="center">Más limitada al ecosistema ABB y RAPID</td>
+    <td align="center">Muy amplia gracias al ecosistema Python</td>
+  </tr>
+
+  <tr>
+    <td align="center">Integración con herramientas externas</td>
+    <td align="center">Principalmente herramientas ABB</td>
+    <td align="center">Alta integración con visión artificial, IA, CAD/CAM y análisis de datos</td>
   </tr>
 
   <tr>
     <td align="center">Aplicaciones típicas</td>
     <td align="center">Automatización industrial ABB, validación y puesta en marcha virtual</td>
-    <td align="center">Educación, simulación industrial, manufactura y programación multirobot</td>
+    <td align="center">Educación, simulación multirobot y programación offline flexible</td>
   </tr>
 
   <tr>
     <td align="center">Ventaja principal</td>
-    <td align="center">Alta fidelidad y control avanzado sobre robots ABB</td>
-    <td align="center">Versatilidad y compatibilidad con múltiples marcas</td>
+    <td align="center">Gran realismo e integración industrial especializada</td>
+    <td align="center">Versatilidad y facilidad de integración mediante Python</td>
   </tr>
 
   <tr>
     <td align="center">Limitación principal</td>
-    <td align="center">Solo funciona con robots ABB</td>
+    <td align="center">Uso restringido al ecosistema ABB</td>
     <td align="center">Menor profundidad de configuración específica por fabricante</td>
   </tr>
 </table>
-
 ---
 
 ## Diagrama de flujo 
