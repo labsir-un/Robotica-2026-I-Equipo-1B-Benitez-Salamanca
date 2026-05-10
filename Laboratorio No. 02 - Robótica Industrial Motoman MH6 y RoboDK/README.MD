@@ -606,18 +606,6 @@ EJECUCIÓN DESDE RoboDK
   </tr>
 
   <tr>
-    <td align="center">Movilidad e interacción en entorno 3D</td>
-    <td align="center">Muy fluida y optimizada para entornos industriales complejos</td>
-    <td align="center">Adecuada y funcional para simulación general</td>
-  </tr>
-
-  <tr>
-    <td align="center">Entradas y salidas digitales</td>
-    <td align="center">Alta integración para lógica industrial y automatización</td>
-    <td align="center">Disponible, pero menos orientada a automatización industrial avanzada</td>
-  </tr>
-
-  <tr>
     <td align="center">Facilidad de programación</td>
     <td align="center">RAPID es intuitivo y muy eficiente para robots ABB</td>
     <td align="center">Python facilita el desarrollo y automatización personalizada</td>
