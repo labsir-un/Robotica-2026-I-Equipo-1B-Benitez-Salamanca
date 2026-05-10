@@ -461,10 +461,14 @@ EJECUCIÓN DESDE RoboDK
 
 [Diagrama de flujo Rosa polar y nombres](Diagramas/Imagenes/robodk_tasks.pdf)
 
----
 
 ## Plano de Planta
 [Plano de Planta del manipulador Motoman MH6](Diagramas/Imagenes/Plano_de_planta_Motoman.pdf)
+
+
+## Código
+[Plano de Planta del manipulador Motoman MH6](Código/Figura_Laboratorio_2.py)
+
 
 ## Referencias
 
