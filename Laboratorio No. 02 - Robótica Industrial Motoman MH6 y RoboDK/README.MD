@@ -463,11 +463,11 @@ EJECUCIÓN DESDE RoboDK
 
 
 ## Plano de Planta
-[Plano de Planta del manipulador Motoman MH6](Diagramas/Imagenes/Plano_de_planta_Motoman.pdf)
+El plano de planta del conjunto para el Laboratorio 2 se aprecia en el siguiente enlace: [Ver plano de planta del manipulador Motoman MH6](Diagramas/Imagenes/Plano_de_planta_Motoman.pdf)
 
 
 ## Código
-[Plano de Planta del manipulador Motoman MH6](Código/Figura_Laboratorio_2.py)
+El código utilizado para la simulación y enlace físico al manipulador se puede observar a través del siguiente enlace: [Ver Código](Código/Figura_Laboratorio_2.py)
 
 
 ## Referencias
