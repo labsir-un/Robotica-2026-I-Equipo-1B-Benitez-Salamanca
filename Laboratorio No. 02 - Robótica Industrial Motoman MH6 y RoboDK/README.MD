@@ -21,25 +21,85 @@ En este laboratorio se trabajó en una breve caracterización de operación del 
 ## Tabla comparativa de especificaciones entre robot manipulador Motoman MH6 y IRB 140
 
 La siguiente tabla muestra las características técnicas de los 2 Robots manipuladores utilizados en los últimos laboratorios
-<div align="center">
+<table align="center">
+  <tr>
+    <th align="center">Característica</th>
+    <th align="center">Motoman MH6</th>
+    <th align="center">IRB 140</th>
+  </tr>
 
+  <tr>
+    <td align="center">Carga útil</td>
+    <td align="center">6 kg</td>
+    <td align="center">6 kg</td>
+  </tr>
 
-| Característica | Motoman MH6 | IRB 140 |
-|---|---|---|
-| Carga útil | 6 kg | 6 kg |
-| Alcance | 1422 mm | 800 mm |
-| Número de grados de libertad | 6 | 6 |
-| Peso | 130 kg | 98 kg |
-| Repetibilidad | ±0,08 mm | ±0,08 mm |
-| Velocidad eje S / A | 140 °/sec | 200 °/sec |
-| Velocidad eje L / B | 130 °/sec | 200 °/sec |
-| Velocidad eje U / C | 135 °/sec | 260 °/sec |
-| Velocidad eje R / D | 270 °/sec | 360 °/sec |
-| Velocidad eje B / E | 270 °/sec | 360 °/sec |
-| Velocidad eje T / F | 400 °/sec | 450 °/sec |
-| Aplicaciones típicas | Soldadura por arco, manipulación de materiales, carga y descarga, corte y ensamblaje | Ensamblaje de precisión, pick and place, manejo de materiales, laboratorio y educación |
-</div>
+  <tr>
+    <td align="center">Alcance</td>
+    <td align="center">1422 mm</td>
+    <td align="center">800 mm</td>
+  </tr>
 
+  <tr>
+    <td align="center">Número de grados de libertad</td>
+    <td align="center">6</td>
+    <td align="center">6</td>
+  </tr>
+
+  <tr>
+    <td align="center">Peso</td>
+    <td align="center">130 kg</td>
+    <td align="center">98 kg</td>
+  </tr>
+
+  <tr>
+    <td align="center">Repetibilidad</td>
+    <td align="center">±0,08 mm</td>
+    <td align="center">±0,08 mm</td>
+  </tr>
+
+  <tr>
+    <td align="center">Velocidad eje S / A</td>
+    <td align="center">140 °/sec</td>
+    <td align="center">200 °/sec</td>
+  </tr>
+
+  <tr>
+    <td align="center">Velocidad eje L / B</td>
+    <td align="center">130 °/sec</td>
+    <td align="center">200 °/sec</td>
+  </tr>
+
+  <tr>
+    <td align="center">Velocidad eje U / C</td>
+    <td align="center">135 °/sec</td>
+    <td align="center">260 °/sec</td>
+  </tr>
+
+  <tr>
+    <td align="center">Velocidad eje R / D</td>
+    <td align="center">270 °/sec</td>
+    <td align="center">360 °/sec</td>
+  </tr>
+
+  <tr>
+    <td align="center">Velocidad eje B / E</td>
+    <td align="center">270 °/sec</td>
+    <td align="center">360 °/sec</td>
+  </tr>
+
+  <tr>
+    <td align="center">Velocidad eje T / F</td>
+    <td align="center">400 °/sec</td>
+    <td align="center">450 °/sec</td>
+  </tr>
+
+  <tr>
+    <td align="center">Aplicaciones típicas</td>
+    <td align="center">Soldadura por arco, corte y manipulación de materiales</td>
+    <td align="center">Ensamblaje de precisión, pick and place y educación</td>
+  </tr>
+</table>
 <div align="center">
 
 <table>
