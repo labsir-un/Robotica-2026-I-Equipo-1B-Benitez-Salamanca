@@ -37,6 +37,7 @@ La siguiente tabla muestra las características técnicas de los 2 Robots manipu
 | Velocidad eje R / D | 270 °/sec | 360 °/sec |
 | Velocidad eje B / E | 270 °/sec | 360 °/sec |
 | Velocidad eje T / F | 400 °/sec | 450 °/sec |
+| Aplicaciones típicas | Soldadura por arco, manipulación de materiales, carga y descarga, corte y ensamblaje | Ensamblaje de precisión, pick and place, manejo de materiales, laboratorio y educación |
 </div>
 
 <div align="center">
