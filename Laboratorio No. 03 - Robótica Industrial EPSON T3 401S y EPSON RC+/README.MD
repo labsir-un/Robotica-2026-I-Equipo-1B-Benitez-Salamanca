@@ -161,3 +161,11 @@ La siguiente tabla muestra las características técnicas de los 3 Robots manipu
 </table>
 
 </div>
+
+## Diagrama de flujo 
+
+##  Flujo principal del código:
+[Diagrama de flujo principal](Diagramas-Imágenes/flujo_principal_robot.png)
+
+##  Flujo del movimiento ventosa:
+[Diagrama de flujo ventosas](Diagramas-Imágenes/detalle_ciclo_movimiento_huevo.png)
