@@ -163,6 +163,8 @@ La siguiente tabla muestra las características técnicas de los 3 Robots manipu
 </div>
 </div>
 
+
+---
 ### Configuración HOME del robot EPSON T3-401S
 
 La configuración **HOME** define la posición de referencia del robot EPSON T3-401S, la cual es utilizada como punto seguro para el inicio y finalización de tareas, recuperación ante errores y procedimientos de calibración. Esta configuración se establece desde el entorno de programación **EPSON RC+ 7.0** y se define mediante los valores de posición de cada articulación medidos en pulsos de codificador (*encoder pulses*).
@@ -199,6 +201,8 @@ Adicionalmente, el sistema permite definir el orden en que cada articulación se
 
 De acuerdo con esta configuración, el eje vertical (**J3**) se desplaza primero hasta alcanzar su posición de referencia. Posteriormente, las articulaciones **J1**, **J2** y **J4** realizan el movimiento hacia sus respectivas posiciones HOME. Esta estrategia permite incrementar la seguridad operacional del sistema, ya que el efector final se eleva antes de ejecutar desplazamientos horizontales o movimientos de orientación, reduciendo la probabilidad de colisiones con piezas, herramientas o elementos del entorno de trabajo.
 
+
+---
 ### Movimientos manuales del robot EPSON T3-401S en EPSON RC+ 7.0
 
 La pestaña **Mover y enseñar** de EPSON RC+ 7.0 permite realizar el control manual del robot EPSON T3-401S para tareas de enseñanza de puntos, verificación de trayectorias y posicionamiento del efector final. Desde esta interfaz es posible operar el manipulador tanto en coordenadas articulares como en coordenadas cartesianas, además de visualizar en tiempo real la posición actual del robot y configurar la magnitud de cada desplazamiento.
