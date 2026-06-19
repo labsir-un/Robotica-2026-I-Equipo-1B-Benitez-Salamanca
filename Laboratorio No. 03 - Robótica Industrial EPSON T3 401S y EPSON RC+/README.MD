@@ -162,6 +162,93 @@ La siguiente tabla muestra las características técnicas de los 3 Robots manipu
 
 </div>
 
+### Configuración HOME del robot EPSON T3-401S
+
+La configuración **HOME** define la posición de referencia del robot EPSON T3-401S, la cual es utilizada como punto seguro para el inicio y finalización de tareas, recuperación ante errores y procedimientos de calibración. Esta configuración se establece desde el entorno de programación **EPSON RC+ 7.0** y se define mediante los valores de posición de cada articulación medidos en pulsos de codificador (*encoder pulses*).
+
+En la práctica realizada, la posición HOME fue configurada con los siguientes valores:
+
+| Articulación | Posición HOME |
+| ------------ | ------------: |
+| J1           | 204800 pulsos |
+| J2           |      0 pulsos |
+| J3           |      0 pulsos |
+| J4           |      0 pulsos |
+
+Las articulaciones del robot corresponden a los siguientes movimientos:
+
+* **J1:** rotación de la base del robot alrededor del eje vertical.
+* **J2:** rotación del brazo principal.
+* **J3:** desplazamiento vertical del eje prismático.
+* **J4:** rotación de la herramienta o efector final.
+
+Adicionalmente, el sistema permite definir el orden en que cada articulación se desplaza durante el retorno a HOME. Para esta configuración se estableció el siguiente esquema:
+
+| Articulación | Orden de movimiento |
+| ------------ | ------------------- |
+| J1           | Paso 2              |
+| J2           | Paso 2              |
+| J3           | Paso 1              |
+| J4           | Paso 2              |
+
+De acuerdo con esta configuración, el eje vertical (**J3**) se desplaza primero hasta alcanzar su posición de referencia. Posteriormente, las articulaciones **J1**, **J2** y **J4** realizan el movimiento hacia sus respectivas posiciones HOME. Esta estrategia permite incrementar la seguridad operacional del sistema, ya que el efector final se eleva antes de ejecutar desplazamientos horizontales o movimientos de orientación, reduciendo la probabilidad de colisiones con piezas, herramientas o elementos del entorno de trabajo.
+
+### Movimientos manuales del robot EPSON T3-401S en EPSON RC+ 7.0
+
+La pestaña **Mover y enseñar** de EPSON RC+ 7.0 permite realizar el control manual del robot EPSON T3-401S para tareas de enseñanza de puntos, verificación de trayectorias y posicionamiento del efector final. Desde esta interfaz es posible operar el manipulador tanto en coordenadas articulares como en coordenadas cartesianas, además de visualizar en tiempo real la posición actual del robot y configurar la magnitud de cada desplazamiento.
+
+Para realizar movimientos manuales, inicialmente se debe seleccionar el modo de operación en el menú **Modo**. El software ofrece dos alternativas principales:
+
+* **Articulación:** permite controlar individualmente cada eje del robot.
+* **Cartesiano (Mundo):** permite controlar directamente la posición del efector final respecto al sistema de referencia global.
+
+#### Movimiento en modo articulación
+
+Al seleccionar el modo **Articulación**, se habilitan los controles correspondientes a los ejes del robot:
+
+* **J1:** rotación de la base.
+* **J2:** rotación del brazo principal.
+* **J3:** desplazamiento vertical.
+* **J4:** rotación de la herramienta.
+
+El movimiento se realiza mediante los botones de incremento y decremento asociados a cada articulación. Cada pulsación produce un desplazamiento de magnitud definida por el tamaño de paso seleccionado, mientras que manteniendo presionado el botón puede obtenerse un movimiento continuo.
+
+#### Movimiento en modo cartesiano
+
+Al seleccionar el modo cartesiano, los controles permiten desplazar el efector final directamente en el espacio de trabajo. En este modo pueden realizarse:
+
+* Traslaciones sobre el eje **X**.
+* Traslaciones sobre el eje **Y**.
+* Traslaciones sobre el eje **Z**.
+* Rotaciones alrededor del eje **U**, correspondiente a la orientación de la herramienta.
+
+Este modo resulta especialmente útil para posicionar el efector final respecto a objetos o estaciones de trabajo sin necesidad de manipular individualmente cada articulación.
+
+#### Lectura de posición
+
+La interfaz muestra permanentemente la posición actual del robot, permitiendo visualizarla en diferentes sistemas de referencia:
+
+* **Mundo (World):** coordenadas cartesianas globales del efector final.
+* **Articulación (Joint):** posición individual de cada eje.
+* **Pulso (Pulse):** valores internos del controlador expresados en pulsos de codificador.
+
+Esta funcionalidad facilita la enseñanza de puntos y la verificación de configuraciones específicas del manipulador.
+
+#### Configuración del tamaño de paso
+
+EPSON RC+ permite seleccionar la distancia recorrida en cada movimiento manual mediante cuatro niveles de desplazamiento:
+
+* **Corto:** 0,1 unidades (mm o grados).
+* **Medio:** 1 unidad (mm o grado).
+* **Largo:** 10 unidades (mm o grados).
+* **Continuo:** movimiento constante mientras se mantenga presionado el control correspondiente.
+
+La selección adecuada del tamaño de paso permite combinar precisión y rapidez durante la programación. Los pasos cortos son apropiados para ajustes finos y enseñanza de puntos, mientras que los modos largo y continuo facilitan desplazamientos extensos dentro del espacio de trabajo.
+
+Finalmente, la velocidad de movimiento puede ajustarse mediante el selector de velocidad disponible en la interfaz, permitiendo realizar operaciones de enseñanza de forma segura y controlada.
+
+
+
 ## Diagrama de flujo 
 
 ##  Flujo principal del código:
