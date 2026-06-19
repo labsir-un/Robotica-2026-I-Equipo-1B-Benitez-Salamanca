@@ -128,3 +128,36 @@ La siguiente tabla muestra las características técnicas de los 3 Robots manipu
   </tr>
 </table>
 <div align="center">
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center">
+<img src="Diagramas-Imágenes/Ejes%20manipulador%20Motoman%20MH6.png"
+     width="340"
+     height="400">
+<br>
+<b>(a)</b> Notación de ejes para el manipulador Motoman MH6
+</td>
+
+<td align="center">
+<img src="Diagramas-Imágenes/Ejes%20manipulador%20IRB%20140.png"
+     width="320"
+     height="400">
+<br>
+<b>(b)</b> Notación de ejes para el manipulador IRB 140
+</td>
+
+<td align="center">
+<img src="Diagramas-Imágenes/epson.png"
+     width="320"
+     height="400">
+<br>
+<b>(c)</b> Notación de ejes para el manipulador EPSON T3-401S
+</td>
+
+</tr>
+</table>
+
+</div>
