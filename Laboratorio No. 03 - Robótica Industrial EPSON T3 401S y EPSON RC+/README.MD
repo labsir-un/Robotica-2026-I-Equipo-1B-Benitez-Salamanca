@@ -169,12 +169,14 @@ La configuración **HOME** define la posición de referencia del robot EPSON T3-
 
 En la práctica realizada, la posición HOME fue configurada con los siguientes valores:
 
+<div align="center">
 | Articulación | Posición HOME |
 | ------------ | ------------: |
 | J1           | 204800 pulsos |
 | J2           |      0 pulsos |
 | J3           |      0 pulsos |
 | J4           |      0 pulsos |
+</div>
 
 Las articulaciones del robot corresponden a los siguientes movimientos:
 
@@ -185,12 +187,15 @@ Las articulaciones del robot corresponden a los siguientes movimientos:
 
 Adicionalmente, el sistema permite definir el orden en que cada articulación se desplaza durante el retorno a HOME. Para esta configuración se estableció el siguiente esquema:
 
+<div align="center">
 | Articulación | Orden de movimiento |
 | ------------ | ------------------- |
 | J1           | Paso 2              |
 | J2           | Paso 2              |
 | J3           | Paso 1              |
 | J4           | Paso 2              |
+</div>
+
 
 De acuerdo con esta configuración, el eje vertical (**J3**) se desplaza primero hasta alcanzar su posición de referencia. Posteriormente, las articulaciones **J1**, **J2** y **J4** realizan el movimiento hacia sus respectivas posiciones HOME. Esta estrategia permite incrementar la seguridad operacional del sistema, ya que el efector final se eleva antes de ejecutar desplazamientos horizontales o movimientos de orientación, reduciendo la probabilidad de colisiones con piezas, herramientas o elementos del entorno de trabajo.
 
