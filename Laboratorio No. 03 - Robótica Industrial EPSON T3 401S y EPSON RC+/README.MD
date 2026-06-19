@@ -159,7 +159,8 @@ La siguiente tabla muestra las características técnicas de los 3 Robots manipu
 
 </tr>
 </table>
-<div align="center">
+
+</div>
 </div>
 
 ### Configuración HOME del robot EPSON T3-401S
