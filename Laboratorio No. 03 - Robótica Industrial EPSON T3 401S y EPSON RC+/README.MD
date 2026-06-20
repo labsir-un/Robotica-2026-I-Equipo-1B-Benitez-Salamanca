@@ -216,7 +216,7 @@ Para realizar movimientos manuales, inicialmente se debe seleccionar el modo de 
 
 Al seleccionar el modo Articulación, se habilitan los controles correspondientes a los ejes del robot:
 <div align="center">
-    <img src="Diagramas-Imágenes/Articular.png" width="400">
+    <img src="Diagramas-Imágenes/Articular.png" width="600">
 </div>
 
 * **J1:** rotación de la base.
@@ -231,7 +231,7 @@ El movimiento se realiza mediante los botones de incremento y decremento asociad
 Al seleccionar el modo cartesiano, los controles permiten desplazar el efector final directamente en el espacio de trabajo. En este modo pueden realizarse:
 
 <div align="center">
-    <img src="Diagramas-Imágenes/EJES.png" width="400">
+    <img src="Diagramas-Imágenes/EJES.png" width="600">
 </div>
 
 * Traslaciones sobre el eje **X**.
