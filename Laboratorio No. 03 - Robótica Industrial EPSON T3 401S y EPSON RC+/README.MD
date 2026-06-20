@@ -213,7 +213,9 @@ Para realizar movimientos manuales, inicialmente se debe seleccionar el modo de 
 * **Cartesiano (Mundo):** permite controlar directamente la posición del efector final respecto al sistema de referencia global.
 
 #### Movimiento en modo articulación
-
+<div align="center">
+    <img src="Diagramas-Imágenes/Articular.png" width="400">
+</div>
 Al seleccionar el modo **Articulación**, se habilitan los controles correspondientes a los ejes del robot:
 
 * **J1:** rotación de la base.
@@ -224,7 +226,9 @@ Al seleccionar el modo **Articulación**, se habilitan los controles correspondi
 El movimiento se realiza mediante los botones de incremento y decremento asociados a cada articulación. Cada pulsación produce un desplazamiento de magnitud definida por el tamaño de paso seleccionado, mientras que manteniendo presionado el botón puede obtenerse un movimiento continuo.
 
 #### Movimiento en modo cartesiano
-
+<div align="center">
+    <img src="Diagramas-Imágenes/EJES.png" width="400">
+</div>
 Al seleccionar el modo cartesiano, los controles permiten desplazar el efector final directamente en el espacio de trabajo. En este modo pueden realizarse:
 
 * Traslaciones sobre el eje **X**.
