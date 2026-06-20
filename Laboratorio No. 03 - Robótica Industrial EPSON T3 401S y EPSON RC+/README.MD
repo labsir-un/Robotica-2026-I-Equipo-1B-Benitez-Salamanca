@@ -263,6 +263,20 @@ EPSON RC+ permite seleccionar la distancia recorrida en cada movimiento manual m
 
 Finalmente, la velocidad de movimiento puede ajustarse mediante el selector de velocidad disponible en la interfaz, permitiendo realizar operaciones de enseñanza de forma segura y controlada.
 
+---
+### Niveles de velocidad para movimientos manuales
+
+EPSON RC+ 7.0 permite realizar movimientos manuales del robot mediante dos niveles de velocidad: "Baja (Low)" y "Alta (High)". Estos niveles determinan la rapidez con la que el manipulador responde a las órdenes de desplazamiento ejecutadas desde la pestaña **Mover y enseñar**, tanto en modo articular como cartesiano.
+
+El nivel "Baja" está orientado a tareas de programación, enseñanza de puntos y verificación de trayectorias. Debido a la menor velocidad de desplazamiento, el operador dispone de un mayor control sobre los movimientos del robot, lo que facilita la realización de ajustes precisos y reduce los riesgos asociados a errores de programación o posicionamiento.
+
+Por su parte, el nivel "Alta" permite efectuar desplazamientos manuales más rápidos dentro del espacio de trabajo. Este modo resulta útil cuando se requiere recorrer distancias relativamente grandes durante las etapas de configuración o validación de una aplicación, disminuyendo el tiempo necesario para posicionar el manipulador.
+
+El cambio entre niveles de velocidad puede realizarse directamente desde la interfaz de EPSON RC+ 7.0. En la pestaña "Mover y enseñar" se encuentra el selector Velocidad, el cual permite elegir entre los modos "Baja" y "Alta". 
+
+La identificación del nivel activo se realiza observando el valor mostrado en el campo "Velocidad" de la ventana de movimiento manual. El modo seleccionado permanece activo hasta que el usuario lo modifique nuevamente, aplicándose a todos los movimientos ejecutados desde la interfaz de enseñanza.
+
+
 
 
 ## Diagrama de flujo 
