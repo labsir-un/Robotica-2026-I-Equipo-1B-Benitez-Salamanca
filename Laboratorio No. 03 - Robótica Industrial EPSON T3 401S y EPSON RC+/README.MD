@@ -435,3 +435,44 @@ Controlador confirma posición → continúa el programa
 ```
 
 El controlador es el "cerebro" en tiempo real que ejecuta cinemática y control; la PC con RC+ funciona como interfaz de desarrollo y supervisión.
+
+# EPSON RC+ 7.0: Funcionalidades, Comunicación y Ejecución de Movimientos
+
+## 1. Funcionalidades principales
+
+- **Editor/Depurador SPEL+**: programación, compilación y ejecución paso a paso con breakpoints e inspección de variables.
+- **Robot Manager**: configuración de tipo de robot, herramientas (Tool), sistemas de coordenadas (Local), cargas y zonas de exclusión.
+- **Vision Guide**: visión artificial integrada para localización de piezas y calibración cámara-robot.
+- **Simulador 3D**: visualización de trayectorias y detección básica de colisiones antes de ejecutar en el robot real.
+- **Monitor de E/S**: visualización en vivo de entradas/salidas y estado del controlador.
+- **Tareas concurrentes**: ejecución de hasta 16 tareas SPEL+ en paralelo, sincronizadas con semáforos o variables compartidas.
+
+## 2. Comunicación con el manipulador
+
+**PC ↔ Controlador**: RC+ se conecta al controlador (RC700, RC90, etc.) vía USB, Ethernet/TCP-IP o RS-232, transfiriendo el programa compilado, puntos y parámetros (Tool, Local, velocidad).
+
+**Controlador ↔ Manipulador**: el controlador ejecuta el programa de forma autónoma y se comunica con los servomotores de cada eje mediante buses internos (encoders, corriente, posición). El manipulador no interpreta SPEL+ directamente; el controlador es quien traduce las instrucciones a movimiento real.
+
+## 3. Proceso de ejecución de un movimiento
+
+1. **Interpretación**: el controlador lee la instrucción (`Go`, `Jump`, `Move`) y extrae punto destino, sistema de coordenadas y parámetros de velocidad/aceleración.
+2. **Cinemática inversa**: si el punto es cartesiano, se calculan los ángulos articulares necesarios y se valida que sea alcanzable.
+3. **Planificación de trayectoria**: se genera un perfil de movimiento (trapezoidal o en S) por articulación, optimizando tiempo de ciclo.
+4. **Verificación de seguridad**: chequeo de límites articulares, zonas de exclusión y señales de seguridad (paros de emergencia, sensores).
+5. **Generación de setpoints**: el controlador envía consignas periódicas a los drivers de los servomotores.
+6. **Control y retroalimentación**: cada eje tiene un lazo cerrado que compara posición real (encoder) vs. deseada y ajusta torque; al alcanzar la tolerancia, el movimiento se marca como completado y el programa continúa.
+
+## 4. Flujo resumido
+
+```
+PC (RC+ 7.0) → compila y transfiere programa SPEL+
+      ↓
+Controlador → interpreta, calcula cinemática inversa, planifica trayectoria, verifica seguridad
+      ↓
+Servomotores/Encoders → ejecutan movimiento con lazo de control cerrado
+      ↓
+Controlador confirma posición → continúa el programa
+```
+
+El controlador es el "cerebro" en tiempo real que ejecuta cinemática y control; la PC con RC+ funciona como interfaz de desarrollo y supervisión.
+
