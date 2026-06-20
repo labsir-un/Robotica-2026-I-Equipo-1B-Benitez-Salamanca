@@ -213,10 +213,11 @@ Para realizar movimientos manuales, inicialmente se debe seleccionar el modo de 
 * **Cartesiano (Mundo):** permite controlar directamente la posición del efector final respecto al sistema de referencia global.
 
 #### Movimiento en modo articulación
+
+Al seleccionar el modo Articulación, se habilitan los controles correspondientes a los ejes del robot:
 <div align="center">
     <img src="Diagramas-Imágenes/Articular.png" width="400">
 </div>
-Al seleccionar el modo **Articulación**, se habilitan los controles correspondientes a los ejes del robot:
 
 * **J1:** rotación de la base.
 * **J2:** rotación del brazo principal.
@@ -226,10 +227,12 @@ Al seleccionar el modo **Articulación**, se habilitan los controles correspondi
 El movimiento se realiza mediante los botones de incremento y decremento asociados a cada articulación. Cada pulsación produce un desplazamiento de magnitud definida por el tamaño de paso seleccionado, mientras que manteniendo presionado el botón puede obtenerse un movimiento continuo.
 
 #### Movimiento en modo cartesiano
+
+Al seleccionar el modo cartesiano, los controles permiten desplazar el efector final directamente en el espacio de trabajo. En este modo pueden realizarse:
+
 <div align="center">
     <img src="Diagramas-Imágenes/EJES.png" width="400">
 </div>
-Al seleccionar el modo cartesiano, los controles permiten desplazar el efector final directamente en el espacio de trabajo. En este modo pueden realizarse:
 
 * Traslaciones sobre el eje **X**.
 * Traslaciones sobre el eje **Y**.
@@ -257,7 +260,6 @@ EPSON RC+ permite seleccionar la distancia recorrida en cada movimiento manual m
 * **Largo:** 10 unidades (mm o grados).
 * **Continuo:** movimiento constante mientras se mantenga presionado el control correspondiente.
 
-La selección adecuada del tamaño de paso permite combinar precisión y rapidez durante la programación. Los pasos cortos son apropiados para ajustes finos y enseñanza de puntos, mientras que los modos largo y continuo facilitan desplazamientos extensos dentro del espacio de trabajo.
 
 Finalmente, la velocidad de movimiento puede ajustarse mediante el selector de velocidad disponible en la interfaz, permitiendo realizar operaciones de enseñanza de forma segura y controlada.
 
