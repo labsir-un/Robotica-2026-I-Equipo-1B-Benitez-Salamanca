@@ -286,3 +286,111 @@ La identificación del nivel activo se realiza observando el valor mostrado en e
 
 ##  Flujo del movimiento ventosa:
 [Diagrama de flujo ventosas](Diagramas-Imágenes/detalle_ciclo_movimiento_huevo.png)
+
+# Análisis Comparativo: EPSON RC+ 7.0 vs RoboDK vs RobotStudio
+
+## Introducción
+
+Estos tres software representan enfoques distintos dentro del ecosistema de programación y simulación robótica industrial: una plataforma de programación nativa de fabricante (EPSON RC+), una plataforma de simulación/programación off-line independiente del fabricante (RoboDK), y una plataforma de simulación nativa de fabricante (RobotStudio, de ABB). A continuación se presenta un análisis comparativo de cada una.
+
+---
+
+## 1. EPSON RC+ 7.0
+
+### Descripción general
+Entorno de desarrollo integrado (IDE) propietario de Epson para programar, simular y controlar sus robots industriales (series SCARA, 6 ejes, y robots cartesianos) mediante el lenguaje SPEL+.
+
+### Ventajas
+- **Integración nativa total** con controladores Epson; comunicación directa sin capas de traducción adicionales.
+- **Acceso completo a funciones específicas del fabricante**: E/S del controlador, visión Epson (Epson RC+ Vision Guide), fuerza/par, y configuraciones de seguridad propias.
+- **Depuración en tiempo real** directamente sobre el robot físico o el simulador integrado, con monitoreo de variables y ejecución paso a paso.
+- **Lenguaje SPEL+** relativamente sencillo de aprender para tareas básicas de movimiento y lógica secuencial.
+- **Costo incluido** generalmente con la compra del controlador (no requiere licencias adicionales para funciones básicas).
+
+### Limitaciones
+- **Exclusividad de marca**: solo funciona con robots Epson; no es transferible a otras plataformas.
+- **Simulación 3D limitada** en comparación con RoboDK o RobotStudio; el entorno gráfico es funcional pero menos sofisticado para verificación de colisiones o celdas complejas.
+- **Curva de aprendizaje en errores de compilación específicos del entorno** (como se ha evidenciado en tareas con trayectorias tipo "salto de caballo"), ya que los mensajes de error no siempre son intuitivos.
+- **Personalización de interfaz y herramientas de análisis de movimiento** (cinemática inversa visual, optimización de trayectoria) más limitada que en plataformas de simulación dedicadas.
+
+### Aplicaciones típicas
+- Programación y puesta en marcha de celdas de trabajo con robots Epson en producción real.
+- Tareas de pick-and-place, ensamblaje de precisión y aplicaciones SCARA en electrónica.
+- Prácticas académicas de programación robótica orientadas a lógica de control y E/S (como ejercicios de trayectorias y secuencias condicionales).
+
+---
+
+## 2. RoboDK
+
+### Descripción general
+Software de simulación y programación off-line (OLP) independiente del fabricante, compatible con más de 500 modelos de robots de distintas marcas (ABB, KUKA, Fanuc, Epson, Universal Robots, entre otros).
+
+### Ventajas
+- **Independencia de marca**: permite simular y generar código para múltiples fabricantes desde una sola interfaz, facilitando comparaciones entre robots.
+- **Programación off-line robusta**: permite diseñar trayectorias, celdas de trabajo y verificar colisiones sin necesidad del robot físico, reduciendo tiempos de inactividad en producción.
+- **API en Python y otros lenguajes**, lo que permite automatizar tareas, generar trayectorias paramétricas y conectar con herramientas externas (MATLAB, CAD, visión artificial).
+- **Importación directa de modelos CAD** (STEP, IGES, STL) para construir celdas virtuales fieles a la geometría real.
+- **Generación de código nativo** para el controlador específico del robot una vez validada la simulación (post-processors).
+- **Herramientas de cinemática avanzada**: cálculo de espacio de trabajo, singularidades, y optimización de orientación de herramienta.
+
+### Limitaciones
+- **No es un controlador en tiempo real**: la ejecución final depende de transferir el programa generado al controlador nativo del robot, lo que puede generar diferencias menores entre simulación y ejecución real.
+- **Costo de licencia** para funciones avanzadas (post-procesadores específicos, módulos de machining, etc.), aunque existe una versión gratuita con funcionalidad básica.
+- **Fidelidad de simulación dependiente de la calidad del modelo importado**; celdas mal modeladas pueden dar falsas garantías de ausencia de colisión.
+- **Sin acceso directo a funciones de bajo nivel** propias de cada fabricante (a menos que se programen manualmente en el código nativo generado).
+
+### Aplicaciones típicas
+- Diseño y validación de celdas robóticas multi-marca antes de la instalación física.
+- Aplicaciones de manufactura aditiva, fresado, soldadura y pulido con trayectorias complejas generadas por CAD/CAM.
+- Educación e investigación en robótica donde se requiere comparar cinemática y desempeño entre diferentes modelos de robot.
+- Generación de trayectorias para brazos robóticos en proyectos académicos (cálculo de cinemática directa/inversa, visualización DH).
+
+---
+
+## 3. RobotStudio
+
+### Descripción general
+Software de simulación y programación off-line desarrollado por ABB exclusivamente para su línea de robots industriales, basado en el lenguaje RAPID.
+
+### Ventajas
+- **Gemelo digital de alta fidelidad** específico para robots ABB, con modelos virtuales que replican el comportamiento real del controlador (incluyendo el motor de simulación virtual IRC5/OmniCore).
+- **VirtualRobot™**: tecnología que ejecuta el mismo software controlador que el robot físico, lo que minimiza la brecha entre simulación y comportamiento real.
+- **Herramientas especializadas integradas**: RobotStudio incluye módulos para soldadura, paletizado, pintura y manejo de prensas, optimizados para aplicaciones industriales ABB.
+- **Multi-Move**: simulación avanzada de múltiples robots ABB trabajando coordinadamente en una misma celda.
+- **Generación automática de trayectorias** a partir de geometría CAD importada (AutoPath), útil en aplicaciones de mecanizado o seguimiento de contornos.
+
+### Limitaciones
+- **Exclusividad de marca**: limitado a robots ABB; no permite programar ni simular robots de otros fabricantes de forma nativa.
+- **Costo de licencias** relativamente alto para módulos avanzados (PowerPacs especializados por industria).
+- **Curva de aprendizaje del lenguaje RAPID** y de la arquitectura de controladores ABB para usuarios sin experiencia previa con la marca.
+- **Menor flexibilidad para proyectos académicos comparativos**, ya que no permite evaluar otras arquitecturas robóticas dentro del mismo entorno.
+
+### Aplicaciones típicas
+- Programación, simulación y puesta en marcha virtual de celdas robóticas ABB en entornos industriales (automotriz, manufactura pesada).
+- Aplicaciones de soldadura robotizada, paletizado y manejo de materiales a gran escala.
+- Validación de tiempos de ciclo y detección de colisiones antes de la implementación física en líneas de producción ABB.
+
+---
+
+## Tabla comparativa resumen
+
+| Criterio | EPSON RC+ 7.0 | RoboDK | RobotStudio |
+|---|---|---|---|
+| **Fabricante / alcance** | Epson (exclusivo) | Multi-marca (~500 robots) | ABB (exclusivo) |
+| **Tipo de software** | Programación + control nativo | Simulación/programación off-line | Simulación/programación off-line nativa |
+| **Lenguaje de programación** | SPEL+ | Python / API propia / código nativo generado | RAPID |
+| **Fidelidad de simulación** | Media | Media-Alta (depende del modelo CAD) | Alta (VirtualRobot™) |
+| **Costo** | Incluido con controlador | Gratuito (básico) / licencia paga (avanzado) | Licencia paga (módulos especializados costosos) |
+| **Mejor uso** | Producción real con robots Epson | Comparación multi-marca, CAD/CAM, prototipado | Producción industrial a gran escala con ABB |
+| **Integración CAD** | Limitada | Alta (STEP, IGES, STL) | Alta (AutoPath) |
+| **Curva de aprendizaje** | Baja-Media | Media | Media-Alta |
+
+---
+
+## Conclusión general
+
+- **EPSON RC+ 7.0** es la opción obligada cuando se trabaja directamente con hardware Epson, priorizando el control real sobre la simulación.
+- **RoboDK** destaca en flexibilidad y neutralidad de marca, siendo ideal para fases de diseño, prototipado académico y proyectos que requieren comparar cinemática entre distintos robots.
+- **RobotStudio** es superior en fidelidad de simulación y herramientas industriales especializadas, pero solo dentro del ecosistema ABB, por lo que su uso se justifica en proyectos de gran escala con esa marca específica.
+
+La elección entre estas herramientas depende principalmente de si el proyecto está atado a una marca específica de robot (Epson o ABB) o si se busca una solución agnóstica de fabricante (RoboDK) para fases de diseño, validación y comparación.
