@@ -39,13 +39,43 @@ Permite orientar la tortuga hacia un ángulo absoluto específico utilizando la 
 
 ### dibujar_cuadrado()
 
-Genera automáticamente un cuadrado mediante cuatro desplazamientos rectilíneos de igual longitud. Después de completar cada lado, la orientación de la tortuga se corrige utilizando la función orientar(), realizando un giro absoluto de 90° respecto a la orientación inicial del dibujo. Este método reduce la acumulación de errores ocasionada por giros basados únicamente en el tiempo.
+Genera automáticamente un cuadrado mediante cuatro desplazamientos rectilíneos de igual longitud. Después de completar cada lado, la orientación de la tortuga se corrige utilizando la función orientar(), realizando un giro absoluto de 90° respecto a la orientación inicial del dibujo.
 
 <div align="center">
     <img src="Diagramas-Imagenes/Square.png" width="300">
 </div>
 
+### dibujar_triangulo()
 
+Implementa el dibujo de un triángulo equilátero. La función realiza tres desplazamientos rectos de igual longitud y, al finalizar cada lado, utiliza orientar() para establecer la siguiente orientación, separada 120° de la anterior. 
+
+<div align="center">
+    <img src="Diagramas-Imagenes/Triangule.png" width="300">
+</div>
+
+### reiniciar()
+
+Realiza una llamada al servicio /reset de turtlesim, restaurando la simulación a su estado inicial. Como resultado, la tortuga vuelve a la posición central con orientación inicial y se elimina cualquier trazo previamente dibujado.
+
+### cambiar_lapiz()
+
+Permite activar o desactivar el lápiz de dibujo mediante el servicio /turtle1/set_pen. La función conserva internamente el estado del lápiz (pen_on) para alternar entre ambas condiciones cada vez que el usuario presiona la tecla correspondiente. 
+
+### detener()
+
+Detiene inmediatamente cualquier trayectoria automática en ejecución. Para ello desactiva el modo automático, establece en cero las velocidades lineal y angular e indica a las funciones de movimiento que finalicen su ejecución mediante la variable stop_requested.
+
+### trayectoria_automatica()
+
+Activa un modo de navegación autónoma en el que la tortuga avanza continuamente por el escenario. Cuando detecta que se aproxima a alguno de los límites de la ventana de turtlesim, modifica automáticamente su velocidad angular para cambiar de dirección y evitar salir del área de trabajo. Este comportamiento se ejecuta de manera continua dentro de la función move_turtle().
+
+<div align="center">
+    <img src="Diagramas-Imagenes/Automatic_movement.png" width="300">
+</div>
+
+move_turtle()
+
+Corresponde a la función ejecutada periódicamente por el temporizador del nodo. Su responsabilidad es construir y publicar el mensaje Twist con las velocidades lineal y angular actuales hacia el tópico /turtle1/cmd_vel. Cuando el modo automático está habilitado, también calcula los cambios de dirección necesarios para evitar que la tortuga alcance los límites del entorno de simulación. De esta manera, actúa como el lazo principal de control encargado de enviar continuamente los comandos de movimiento a la tortuga.
 ---
 
 ## Explicación del dibujo de letras personalizadas
