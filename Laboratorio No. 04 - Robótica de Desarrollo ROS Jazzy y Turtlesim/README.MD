@@ -24,6 +24,9 @@ Finalmente, se desarrolla un sistema líder-seguidor conformado por dos tortugas
 ---
 
 ## Explicación del control manual de la tortuga
+
+
+## Explicación de las funciones automáticas implementadas
 El nodo incorpora un conjunto de funciones automáticas que permiten ejecutar movimientos predefinidos y acciones complementarias sin necesidad de controlar continuamente la tortuga mediante el teclado. Cada función fue implementada de manera modular para facilitar su mantenimiento y reutilización.
 
 ### mover(linear, angular, tiempo)
@@ -37,10 +40,6 @@ Permite orientar la tortuga hacia un ángulo absoluto específico utilizando la 
 ### dibujar_cuadrado()
 
 Genera automáticamente un cuadrado mediante cuatro desplazamientos rectilíneos de igual longitud. Después de completar cada lado, la orientación de la tortuga se corrige utilizando la función orientar(), realizando un giro absoluto de 90° respecto a la orientación inicial del dibujo. Este método reduce la acumulación de errores ocasionada por giros basados únicamente en el tiempo.
-
----
-
-## Explicación de las funciones automáticas implementadas
 
 ---
 
