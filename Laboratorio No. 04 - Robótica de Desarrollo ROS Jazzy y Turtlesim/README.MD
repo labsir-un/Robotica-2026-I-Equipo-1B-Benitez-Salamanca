@@ -162,7 +162,7 @@ flowchart TD
     E --> F["Crear clientes: reset y set_pen"]
     F --> G[Crear temporizador]
     G --> H[Crear hilo keyboard_loop]
-    H --> I[rclpy.spin]
+    H --> I["rclpy.spin"]
 
     I --> J[Callback move_turtle]
     I --> K[Hilo keyboard_loop]
