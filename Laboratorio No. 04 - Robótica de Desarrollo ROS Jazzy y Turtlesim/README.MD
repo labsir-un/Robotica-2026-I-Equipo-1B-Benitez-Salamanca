@@ -50,7 +50,7 @@ Genera automáticamente un cuadrado mediante cuatro desplazamientos rectilíneos
 Implementa el dibujo de un triángulo equilátero. La función realiza tres desplazamientos rectos de igual longitud y, al finalizar cada lado, utiliza orientar() para establecer la siguiente orientación, separada 120° de la anterior. 
 
 <div align="center">
-    <img src="Diagramas-Imagenes/Triangule.png" width="300">
+    <img src="Diagramas-Imagenes/Triangle.png" width="300">
 </div>
 
 ### reiniciar()
@@ -73,9 +73,10 @@ Activa un modo de navegación autónoma en el que la tortuga avanza continuament
     <img src="Diagramas-Imagenes/Automatic_movement.png" width="300">
 </div>
 
-move_turtle()
+### move_turtle()
 
 Corresponde a la función ejecutada periódicamente por el temporizador del nodo. Su responsabilidad es construir y publicar el mensaje Twist con las velocidades lineal y angular actuales hacia el tópico /turtle1/cmd_vel. Cuando el modo automático está habilitado, también calcula los cambios de dirección necesarios para evitar que la tortuga alcance los límites del entorno de simulación. De esta manera, actúa como el lazo principal de control encargado de enviar continuamente los comandos de movimiento a la tortuga.
+
 ---
 
 ## Explicación del dibujo de letras personalizadas
