@@ -44,8 +44,7 @@ Genera automáticamente un cuadrado mediante cuatro desplazamientos rectilíneos
 <td align="center">
   <img src="Diagramas-Imagenes/Square.png"
        width="320"
-       height="400">
-  <br>
+       height="400"><br><br>
   <b>(b)</b> Cuadrado dibujado por la tortuga
 </td>
 
