@@ -151,52 +151,59 @@ La letra D se activa mediante la tecla D. La tortuga comienza dibujando la barra
 ---
 
 ## Diagramas de flujo
+
 ```mermaid
 flowchart TD
 
     A([Inicio]) --> B[Inicializar ROS 2]
     B --> C[Crear nodo TurtleController]
 
-    C --> D["Crear publicador: /turtle1/cmd_vel"]
-    D --> E["Crear suscriptor: /turtle1/pose"]
-    E --> F["Crear clientes: reset y set_pen"]
+    C --> D["Crear publicador /turtle1/cmd_vel"]
+    D --> E["Crear suscriptor /turtle1/pose"]
+    E --> F["Crear clientes reset y set_pen"]
     F --> G[Crear temporizador]
     G --> H[Crear hilo keyboard_loop]
-    H --> I["rclpy.spin"]
+    H --> I["rclpy.spin()"]
 
-    I --> J[Callback move_turtle]
-    I --> K[Hilo keyboard_loop]
+    I --> J["Callback move_turtle()"]
+    I --> K["Callback pose_callback()"]
+    I --> L["Hilo keyboard_loop()"]
 
-    J --> L{"¿Modo automático?"}
+    K --> M["Actualizar x, y y θ"]
 
-    L -->|Sí| M[Calcular velocidades]
-    L -->|No| N[Usar velocidades actuales]
+    J --> N{"¿Modo automático?"}
 
-    M --> O[Publicar Twist]
-    N --> O
+    N -->|Sí| O["Calcular velocidades automáticas"]
+    N -->|No| P["Usar velocidades actuales"]
 
-    K --> P[Leer tecla]
+    O --> Q["Publicar Twist"]
+    P --> Q
 
-    P --> Q{"¿Qué tecla?"}
+    L --> R["Leer tecla"]
 
-    Q -->|Flechas| R[Actualizar velocidades]
-    Q -->|S| S1[Dibujar cuadrado]
-    Q -->|T| S2[Dibujar triángulo]
-    Q -->|R| S3[Reiniciar simulación]
-    Q -->|P| S4[Activar o desactivar lápiz]
-    Q -->|A| S5[Trayectoria automática]
-    Q -->|Q| S6[Detener movimiento]
-    Q -->|J D B M F Z L| S7[Dibujar letra]
+    R --> S{"¿Acción seleccionada?"}
 
-    R --> P
-    S1 --> P
-    S2 --> P
-    S3 --> P
-    S4 --> P
-    S5 --> P
-    S6 --> P
-    S7 --> P
+    S -->|Flechas| T["Control manual"]
+    S -->|S o T| U["Dibujar figura"]
+    S -->|J D B M F Z L| V["Dibujar letra"]
+    S -->|A| W["Activar trayectoria automática"]
+    S -->|P| X["Activar/Desactivar lápiz"]
+    S -->|R| Y["Reiniciar simulación"]
+    S -->|Q| Z["Detener movimiento"]
+
+    T --> R
+    U --> R
+    V --> R
+    W --> R
+    X --> R
+    Y --> R
+    Z --> R
+
+    I --> AA["Ctrl + C"]
+
+    AA --> AB["destroy_node()"]
+    AB --> AC["rclpy.shutdown()"]
+    AC --> AD([Fin])
 ```
-
 
 
