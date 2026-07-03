@@ -48,6 +48,7 @@ Genera automáticamente un cuadrado mediante cuatro desplazamientos rectilíneos
 <br>
 <b>(b)</b> Notación de ejes para el manipulador IRB 140
 </td>
+
 ---
 
 ## Explicación del dibujo de letras personalizadas
