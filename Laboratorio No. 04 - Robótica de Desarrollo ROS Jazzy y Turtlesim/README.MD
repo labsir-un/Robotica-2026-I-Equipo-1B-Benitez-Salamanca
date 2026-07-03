@@ -151,7 +151,7 @@ La letra D se activa mediante la tecla D. La tortuga comienza dibujando la barra
 La implementación del laboratorio utiliza un único nodo desarrollado en Python denominado turtle_controller, el cual se encarga de gestionar el control manual de la tortuga, la ejecución de trayectorias automáticas, el dibujo de figuras y letras, así como la interacción con los diferentes mecanismos de comunicación proporcionados por ROS 2.
 
 ### Nodo
-* turtle_controller: Su función es leer las entradas del teclado, calcular las velocidades de movimiento, publicar comandos de velocidad, recibir la posición de la tortuga y solicitar servicios para reiniciar la simulación o modificar el estado del lápiz.
+#### turtle_controller: Su función es leer las entradas del teclado, calcular las velocidades de movimiento, publicar comandos de velocidad, recibir la posición de la tortuga y solicitar servicios para reiniciar la simulación o modificar el estado del lápiz.
 
 ### Tópicos
 /turtle1/cmd_vel (Publisher)
