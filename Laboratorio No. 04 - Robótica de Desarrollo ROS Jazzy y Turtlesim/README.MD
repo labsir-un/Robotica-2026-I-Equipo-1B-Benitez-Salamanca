@@ -147,3 +147,60 @@ La letra D se activa mediante la tecla D. La tortuga comienza dibujando la barra
 ---
 
 ## Descripción de los nodos, tópicos y servicios utilizados
+
+---
+
+## Diagramas de flujo
+
+```mermaid
+flowchart TD
+
+    A([Inicio]) --> B[Inicializar ROS 2]
+    B --> C[Crear nodo TurtleController]
+
+    C --> D[Crear publicador<br/>/turtle1/cmd_vel]
+    D --> E[Crear suscriptor<br/>/turtle1/pose]
+    E --> F[Crear clientes<br/>reset y set_pen]
+    F --> G[Crear temporizador]
+    G --> H[Crear hilo keyboard_loop]
+    H --> I[rclpy.spin()]
+
+    I --> J[Callback move_turtle()]
+    I --> K[Hilo keyboard_loop()]
+
+    J --> L{¿Modo automático?}
+
+    L -->|Sí| M[Calcular velocidades]
+    L -->|No| N[Usar velocidades actuales]
+
+    M --> O[Publicar Twist]
+    N --> O
+
+    K --> P[Leer tecla]
+
+    P --> Q{¿Qué tecla?}
+
+    Q -->|↑ ↓ ← →| R[Actualizar velocidades]
+
+    Q -->|S| S1[Dibujar cuadrado]
+    Q -->|T| S2[Dibujar triángulo]
+    Q -->|R| S3[Reiniciar simulación]
+    Q -->|P| S4[Activar/Desactivar lápiz]
+    Q -->|A| S5[Trayectoria automática]
+    Q -->|Q| S6[Detener movimiento]
+
+    Q -->|J D B M F Z L| S7[Dibujar letra]
+
+    R --> P
+    S1 --> P
+    S2 --> P
+    S3 --> P
+    S4 --> P
+    S5 --> P
+    S6 --> P
+    S7 --> P
+```
+
+
+
+
