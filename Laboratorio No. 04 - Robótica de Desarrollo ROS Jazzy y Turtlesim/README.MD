@@ -81,6 +81,65 @@ Corresponde a la función ejecutada periódicamente por el temporizador del nodo
 
 ## Explicación del dibujo de letras personalizadas
 
+### Dibujo de la letra J 
+
+Al presionar la tecla J, la tortuga se orienta inicialmente hacia abajo para garantizar que la letra siempre conserve la misma orientación, independientemente de la dirección en la que se encontraba previamente. A continuación, recorre el tramo vertical principal y finaliza realizando un movimiento curvo equivalente a un gancho mediante la combinación de velocidad lineal y velocidad angular, reproduciendo la forma característica de la letra.
+
+<div align="center">
+    <img src="Diagramas-Imagenes/J.png" width="300">
+</div>
+
+### Dibujo de la letra B
+
+La letra B se activa mediante la tecla B. Primero, la tortuga se orienta hacia el eje positivo de X y realiza un pequeño desplazamiento horizontal. Posteriormente dibuja el lóbulo superior mediante una media circunferencia, avanza hasta la zona central y repite el procedimiento para formar el lóbulo inferior. Finalmente se orienta hacia arriba y completa la barra vertical, obteniendo una representación continua de la letra.
+
+<div align="center">
+    <img src="Diagramas-Imagenes/B.png" width="300">
+</div>
+
+### Dibujo de la letra M
+
+Al presionar la tecla M, la tortuga comienza orientándose verticalmente para dibujar el primer segmento recto. Luego modifica sucesivamente su orientación para generar las dos diagonales internas mediante movimientos lineales y concluye con el último segmento vertical, formando la estructura característica de la letra M.
+
+<div align="center">
+    <img src="Diagramas-Imagenes/M.png" width="300">
+</div>
+
+### Dibujo de la letra F
+
+La letra F se ejecuta con la tecla F. Inicialmente se dibuja la barra vertical principal y posteriormente la barra superior. Para evitar que aparezcan líneas no deseadas durante el reposicionamiento hacia la mitad de la letra, el lápiz se desactiva temporalmente utilizando el servicio SetPen. Una vez alcanzada la posición adecuada, el lápiz vuelve a activarse y se dibuja la barra horizontal central.
+
+<div align="center">
+    <img src="Diagramas-Imagenes/F.png" width="300">
+</div>
+
+### Dibujo de la letra S
+
+Debido a que la tecla S ya se encuentra asignada al dibujo automático del cuadrado, la letra S se ejecuta mediante la tecla Z. La trayectoria comienza con un pequeño tramo recto superior, seguido de una media circunferencia, un breve enlace lineal y una segunda media circunferencia en sentido contrario. Finalmente se añade un pequeño tramo recto inferior para completar la forma de la letra.
+
+<div align="center">
+    <img src="Diagramas-Imagenes/S.png" width="300">
+</div>
+
+### Dibujo de la letra L
+
+Al presionar la tecla L, la tortuga se orienta hacia abajo y dibuja la barra vertical de la letra mediante un movimiento rectilíneo. Posteriormente gira hacia la derecha y realiza un desplazamiento horizontal para formar la base, obteniendo una representación simple de la letra L.
+
+<div align="center">
+    <img src="Diagramas-Imagenes/L.png" width="300">
+</div>
+
+
+### Dibujo de la letra D 
+
+La letra D se activa mediante la tecla D. La tortuga comienza dibujando la barra vertical, avanza ligeramente en la parte superior y genera el borde curvo derecho mediante dos cuartos de circunferencia unidos por un segmento vertical. Finalmente se orienta hacia la izquierda para cerrar la base de la letra con un último movimiento rectilíneo. 
+
+<div align="center">
+    <img src="Diagramas-Imagenes/D.png" width="300">
+</div>
+
+
+
 ---
 
 ## Explicación del sistema líder-seguidor con dos tortugas
