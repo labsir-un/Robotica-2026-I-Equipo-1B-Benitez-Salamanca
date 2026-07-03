@@ -25,6 +25,7 @@ Finalmente, se desarrolla un sistema líder-seguidor conformado por dos tortugas
 
 ## Explicación del control manual de la tortuga
 
+El nodo `turtle_teleop` implementa el control manual de `turtle1` mediante el teclado. Lee las teclas de flecha en un hilo dedicado usando `termios`/`tty` en modo raw, lo que permite capturar cada pulsación sin necesidad de presionar Enter. Cada flecha modifica acumulativamente las variables de velocidad lineal (`linear.x`) y angular (`angular.z`), que un timer publica periódicamente como mensajes `geometry_msgs/Twist` en el topic `/turtle1/cmd_vel`. La barra espaciadora detiene la tortuga y `q` cierra el nodo limpiamente publicando velocidad cero antes de salir.
 
 ## Explicación de las funciones automáticas implementadas
 El nodo incorpora un conjunto de funciones automáticas que permiten ejecutar movimientos predefinidos y acciones complementarias sin necesidad de controlar continuamente la tortuga mediante el teclado. Cada función fue implementada de manera modular para facilitar su mantenimiento y reutilización.
@@ -143,6 +144,8 @@ La letra D se activa mediante la tecla D. La tortuga comienza dibujando la barra
 ---
 
 ## Explicación del sistema líder-seguidor con dos tortugas
+
+El nodo `turtle_follower` implementa el seguimiento autónomo de `turtle1` por parte de una segunda tortuga (`turtle2`). Al inicializarse, llama de forma asíncrona al servicio `/spawn` de turtlesim para crear `turtle2` en el simulador. Una vez confirmado el spawn, se suscribe simultáneamente a `/turtle1/pose` y `/turtle2/pose` para conocer en todo momento la posición y orientación de ambas tortugas. Un timer ejecuta periódicamente un controlador proporcional que calcula la distancia entre las dos tortugas (con Pitágoras) y el ángulo hacia el que debe girar `turtle2` para apuntar a `turtle1` (con `atan2`). Con esos dos valores genera un mensaje `geometry_msgs/Twist` donde la velocidad lineal es proporcional a la distancia y la velocidad angular es proporcional al error de ángulo, publicándolo en `/turtle2/cmd_vel`. Cuando `turtle2` se acerca a menos de 0.3 unidades de `turtle1`, ambas velocidades se anulan para evitar que la tortuga vibre alrededor del objetivo.
 
 ---
 
