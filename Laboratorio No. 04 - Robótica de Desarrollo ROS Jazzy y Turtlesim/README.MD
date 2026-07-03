@@ -157,12 +157,15 @@ Su función es leer las entradas del teclado, calcular las velocidades de movimi
 ### Tópicos
 #### /turtle1/cmd_vel (Publisher)
 Tópico de tipo geometry_msgs/Twist utilizado para enviar comandos de velocidad lineal y angular a la tortuga. Es el principal medio de control del movimiento durante la operación manual y automática.
+
 #### /turtle1/pose (Subscriber)
 Tópico de tipo turtlesim/Pose empleado para recibir continuamente la posición (x,y) y la orientación (θ) de la tortuga. Esta información se utiliza para conocer el estado actual del robot, orientar correctamente las figuras y letras, y ejecutar la trayectoria automática.
 
 ### Servicios
+
 #### /reset (Servicio std_srvs/Empty)
 Reinicia la simulación de turtlesim, devolviendo la tortuga a su posición inicial y eliminando todos los trazos realizados.
+
 #### /turtle1/set_pen (Servicio turtlesim/SetPen)
 Permite modificar las propiedades del lápiz de dibujo, incluyendo el color RGB, el grosor de la línea y el estado del lápiz (activado o desactivado). Esta funcionalidad se emplea tanto para habilitar o deshabilitar el dibujo como para realizar desplazamientos sin dejar rastro durante la construcción de algunas letras.
 
