@@ -42,7 +42,7 @@ Permite orientar la tortuga hacia un ángulo absoluto específico utilizando la 
 Genera automáticamente un cuadrado mediante cuatro desplazamientos rectilíneos de igual longitud. Después de completar cada lado, la orientación de la tortuga se corrige utilizando la función orientar(), realizando un giro absoluto de 90° respecto a la orientación inicial del dibujo. Este método reduce la acumulación de errores ocasionada por giros basados únicamente en el tiempo.
 
 <div align="center">
-    <img src="Diagramas-Imagenes/Square.png" width="500">
+    <img src="Diagramas-Imagenes/Square.png" width="300">
 </div>
 
 
