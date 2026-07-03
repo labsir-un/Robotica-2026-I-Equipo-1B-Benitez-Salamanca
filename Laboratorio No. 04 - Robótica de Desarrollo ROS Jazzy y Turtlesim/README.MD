@@ -47,7 +47,7 @@ Genera automáticamente un cuadrado mediante cuatro desplazamientos rectilíneos
          height="400">
 
     <p align="center">
-        <b>(a)</b> Cuadrado dibujado por la tortuga
+        <b>(b)</b> Cuadrado dibujado por la tortuga
     </p>
 </td>
 
