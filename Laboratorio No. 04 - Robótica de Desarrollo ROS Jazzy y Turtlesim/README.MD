@@ -24,7 +24,8 @@ Finalmente, se desarrolla un sistema líder-seguidor conformado por dos tortugas
 ---
 
 ## Explicación del control manual de la tortuga
-
+CAC
+A
 ---
 
 ## Explicación de las funciones automáticas implementadas
