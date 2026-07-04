@@ -241,7 +241,7 @@ flowchart TD
     AB --> AC["rclpy.shutdown()"]
     AC --> AD([Fin])
 
-flowchart TD
+
     A([Inicio]) --> B[Inicializar ROS2]
     B --> C[Crear nodo TurtleController]
     C --> D[Crear publisher /turtle1/cmd_vel]
