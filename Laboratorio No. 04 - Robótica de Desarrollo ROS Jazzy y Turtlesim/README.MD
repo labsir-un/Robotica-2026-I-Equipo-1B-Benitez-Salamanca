@@ -240,6 +240,60 @@ flowchart TD
     AA --> AB["destroy_node()"]
     AB --> AC["rclpy.shutdown()"]
     AC --> AD([Fin])
+
+flowchart TD
+    A([Inicio]) --> B[Inicializar ROS2]
+    B --> C[Crear nodo TurtleController]
+    C --> D[Crear publisher /turtle1/cmd_vel]
+    D --> E[Crear timer 0.1 s]
+    E --> F[Crear hilo keyboard_loop]
+    F --> G[rclpy.spin]
+
+    G --> H[move_turtle]
+    G --> I[keyboard_loop]
+
+    H --> J[Publicar Twist\n/turtle1/cmd_vel]
+
+    I --> K[Leer tecla]
+    K --> L{¿Qué tecla?}
+    L -->|Flechas| M[Actualizar linear/angular]
+    L -->|Espacio| N[linear=0, angular=0]
+    L -->|q| O[stop_and_shutdown]
+    M --> K
+    N --> K
+
+    G --> P[Ctrl+C]
+    P --> Q[stop_and_shutdown]
+    Q --> R[destroy_node]
+    R --> S[rclpy.shutdown]
+    S --> T([Fin])
+
+
+flowchart TD
+    A([Inicio]) --> B[Inicializar ROS2]
+    B --> C[Crear nodo TurtleFollower]
+    C --> D[Crear publisher /turtle2/cmd_vel]
+    D --> E[Suscribir /turtle1/pose]
+    E --> F[Llamar servicio /spawn\nCrear turtle2 async]
+    F --> G{¿Spawn exitoso?}
+
+    G -->|No| H[Log error, salir]
+    G -->|Sí| I[Suscribir /turtle2/pose]
+
+    I --> J[Crear timer control 0.1 s]
+    J --> K[rclpy.spin]
+
+    K --> L[control_loop]
+    L --> M[Calcular distancia y ángulo\nPitágoras + atan2]
+    M --> N{¿distancia > 0.3?}
+
+    N -->|Sí| O[Publicar Twist proporcional\nlinear proporcional dist\nangular proporcional error ángulo]
+    N -->|No| P[Publicar Twist = 0]
+
+    O --> L
+    P --> L
+
+    K -->|Ctrl+C| Q[destroy_node]
+    Q --> R[rclpy.shutdown]
+    R --> S([Fin])
 ```
-
-
