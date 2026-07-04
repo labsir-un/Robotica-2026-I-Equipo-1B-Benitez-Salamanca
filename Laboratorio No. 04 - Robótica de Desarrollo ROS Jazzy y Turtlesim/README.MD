@@ -179,6 +179,10 @@ Reinicia la simulación de turtlesim, devolviendo la tortuga a su posición inic
 #### /turtle1/set_pen (Servicio turtlesim/SetPen)
 Permite modificar las propiedades del lápiz de dibujo, incluyendo el color RGB, el grosor de la línea y el estado del lápiz (activado o desactivado). Esta funcionalidad se emplea tanto para habilitar o deshabilitar el dibujo como para realizar desplazamientos sin dejar rastro durante la construcción de algunas letras.
 
+#### `/spawn` (Servicio `turtlesim/Spawn`)
+ 
+Crea una nueva instancia de tortuga en el simulador con una posición (x, y) y orientación (θ) inicial especificadas. Es invocado de forma asíncrona al arrancar el nodo, antes de iniciar el control, para garantizar que `turtle2` exista en la simulación y sus tópicos de pose y velocidad estén disponibles.
+
 
 ---
 
