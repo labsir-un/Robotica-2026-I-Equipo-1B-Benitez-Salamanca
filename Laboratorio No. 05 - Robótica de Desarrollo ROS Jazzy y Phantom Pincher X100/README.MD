@@ -62,7 +62,7 @@ programa debe impedir el envío de comandos fuera de estos rangos.
     <tr>
       <td align="center">Codo</td>
       <td align="center">-2,15</td>
-      <td align="center">1,571 (π/2)</td>
+      <td align="center">1,571 </td>
       <td align="center">0,10 rad</td>
     </tr>
     <tr>
@@ -73,8 +73,8 @@ programa debe impedir el envío de comandos fuera de estos rangos.
     </tr>
     <tr>
       <td align="center">Pinza</td>
-      <td align="center">-1,571 (-π/2)</td>
-      <td align="center">1,571 (π/2)</td>
+      <td align="center">-1,571 </td>
+      <td align="center">1,571 </td>
       <td align="center">0,10 rad</td>
     </tr>
   </tbody>
