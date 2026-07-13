@@ -15,10 +15,11 @@
 
 ## Actividades
 ### Actividad 2 Identificación de motores y articulaciones
+
 | Articulación | ID DYNAMIXEL | Referencia | Sentido positivo | Función |
 |--------------|--------------|------------|------------------|---------|
-| Base (Waist) | N.A. | 0 rad (posición inicial) | Giro antihorario del brazo alrededor del eje vertical al aumentar el ángulo. | Rotación de toda la estructura del brazo. |
-| Hombro (Shoulder) | N.A. | 0 rad (posición inicial) | Elevación del primer eslabón al aumentar el ángulo. | Elevar y descender el brazo. |
-| Codo (Elbow) | N.A. | 0 rad (posición inicial) | Extensión del segundo eslabón al aumentar el ángulo. | Acercar o alejar el efector final. |
-| Muñeca (Wrist) | N.A. | 0 rad (posición inicial) | Rotación de la muñeca para orientar la pinza al aumentar el ángulo. | Orientar la pinza. |
-| Pinza (Gripper) | N.A. | Posición inicial (cerrada o según el modelo) | Apertura de las mordazas al aumentar el comando de la pinza. | Sujetar y liberar objetos. |
+| Base (Waist) | N.A. | 0 rad (posición inicial) | Giro antihorario del robot respecto al eje vertical, visto desde arriba. | Rotar toda la cadena cinemática alrededor de la base. |
+| Hombro (Shoulder) | N.A. | 0 rad (posición inicial) | La rotación positiva del hombro hace descender el primer eslabón, desplazando toda la cadena cinemática. | Posicionar el primer eslabón y modificar la posición de toda la cadena cinemática. |
+| Codo (Elbow) | N.A. | -π rad | La rotación positiva del codo hace descender la cadena cinemática a partir del segundo eslabón. | Modificar la configuración del segundo eslabón y del efector final sin afectar el primer eslabón. |
+| Muñeca (Wrist) | N.A. | 0 rad (posición inicial) | La rotación positiva de la muñeca hace descender la pinza. | Orientar el efector final mediante la rotación de la muñeca. |
+| Pinza (Gripper) | N.A. | Posición inicial (cerrada) | La rotación positiva produce la apertura de la pinza. | Sujetar y liberar objetos mediante la apertura y cierre de las mordazas. |
