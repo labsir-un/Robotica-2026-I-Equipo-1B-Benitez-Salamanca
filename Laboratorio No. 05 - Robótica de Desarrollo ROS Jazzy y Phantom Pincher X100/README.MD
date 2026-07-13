@@ -27,14 +27,55 @@
 
 Nota: La columna ID DYNAMIXEL se omitió debido a que no se contaba con el modelo físico que nos permitía conocer esta característica.
 
-### Actividad 6. Determinación de límites seguros
+<h3>Actividad 6. Determinación de límites seguros</h3>
 
-Los siguientes límites fueron determinados experimentalmente a partir de la simulación en RViz. Los valores corresponden a aproximaciones visuales obtenidas considerando el mejor caso, es decir, evaluando cada articulación de manera independiente y sin interferencias ocasionadas por la configuración instantánea de las demás articulaciones. Para garantizar una operación segura, el programa debe impedir el envío de comandos fuera de estos rangos.
+<p>
+Los siguientes límites fueron determinados experimentalmente a partir de la simulación en RViz.
+Los valores corresponden a aproximaciones visuales obtenidas considerando el mejor caso, es decir,
+evaluando cada articulación de manera independiente y sin interferencias ocasionadas por la
+configuración instantánea de las demás articulaciones. Para garantizar una operación segura, el
+programa debe impedir el envío de comandos fuera de estos rangos.
+</p>
 
-| Articulación | Límite inferior (rad) | Límite superior (rad) | Margen de seguridad |
-|--------------|----------------------:|----------------------:|--------------------:|
-| Base | -2.618 | 2.618 | 0.10 rad |
-| Hombro | -2.00 | 2.00 | 0.10 rad |
-| Codo | -2.15 | 1.571 (π/2) | 0.10 rad |
-| Muñeca | -2.00 | 2.30 | 0.10 rad |
-| Pinza | -1.571 (-π/2) | 1.571 (π/2) | 0.10 rad |
+<table>
+  <thead>
+    <tr>
+      <th align="center">Articulación</th>
+      <th align="center">Límite inferior (rad)</th>
+      <th align="center">Límite superior (rad)</th>
+      <th align="center">Margen de seguridad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">Base</td>
+      <td align="center">-2,618</td>
+      <td align="center">2,618</td>
+      <td align="center">0,10 rad</td>
+    </tr>
+    <tr>
+      <td align="center">Hombro</td>
+      <td align="center">-2,00</td>
+      <td align="center">2,00</td>
+      <td align="center">0,10 rad</td>
+    </tr>
+    <tr>
+      <td align="center">Codo</td>
+      <td align="center">-2,15</td>
+      <td align="center">1,571 (π/2)</td>
+      <td align="center">0,10 rad</td>
+    </tr>
+    <tr>
+      <td align="center">Muñeca</td>
+      <td align="center">-2,00</td>
+      <td align="center">2,30</td>
+      <td align="center">0,10 rad</td>
+    </tr>
+    <tr>
+      <td align="center">Pinza</td>
+      <td align="center">-1,571 (-π/2)</td>
+      <td align="center">1,571 (π/2)</td>
+      <td align="center">0,10 rad</td>
+    </tr>
+  </tbody>
+</table>
