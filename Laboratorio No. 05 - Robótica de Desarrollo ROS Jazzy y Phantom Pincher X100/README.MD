@@ -49,7 +49,7 @@ Las dimensiones del robot fueron obtenidas a partir de la medición de los archi
     <tr><td align="center">Distancia Base – Hombro</td><td align="center">44,5</td></tr>
     <tr><td align="center">Distancia Hombro – Codo</td><td align="center">105,7</td></tr>
     <tr><td align="center">Distancia Codo – Muñeca</td><td align="center">100,0</td></tr>
-    <tr><td align="center">Distancia Muñeca – TCP</td><td align="center">129,3</td></tr>
+    <tr><td align="center">Distancia Muñeca – TCP</td><td align="center">107,6</td></tr>
   </tbody>
 </table>
 
