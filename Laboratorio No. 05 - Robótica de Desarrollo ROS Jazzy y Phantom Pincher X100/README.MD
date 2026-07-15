@@ -27,37 +27,40 @@
 
 Nota: La columna ID DYNAMIXEL se omitió debido a que no se contaba con el modelo físico que nos permitía conocer esta característica.
 
----
+
 
 ### Actividad 3. Medición del robot
 
-Las dimensiones del robot fueron obtenidas a partir de la medición de los archivos STL del modelo tridimensional disponible en el repositorio. Todas las medidas corresponden a valores aproximados.
+Las dimensiones del robot fueron obtenidas a partir de la medición de los archivos STL del modelo tridimensional disponible en el repositorio.  Las dimensiones estructurales se obtienen a partir de la altura de la base y la distancia entre articulaciones para las demás medidas solicitadas.
 
 #### Dimensiones estructurales
 
 | Parámetro | Valor (mm) |
 |:----------|-----------:|
-| Altura de la base | |
-| Distancia Base – Hombro | |
-| Distancia Hombro – Codo | |
-| Distancia Codo – Muñeca | |
-| Distancia Muñeca – TCP | |
+| Altura de la base | 52,6 |
+| Distancia Base – Hombro | 44,5 |
+| Distancia Hombro – Codo | 105,7 |
+| Distancia Codo – Muñeca | 100,0 |
+| Distancia Muñeca – TCP | 129,3 |
+
+Luego la longitud de los eslabones se mide como el alto o largo de cada eslabón y no como la distancia entre articulaciones.
 
 #### Longitud de los eslabones
 
 | Eslabón | Longitud (mm) |
 |:---------|--------------:|
-| Eslabón 1 | |
-| Eslabón 2 | |
-| Eslabón 3 | |
+| Eslabón 1 | 157,0 |
+| Eslabón 2 | 114,2 |
+| Eslabón 3 | 66,0 |
 
 #### Dimensiones de la pinza
 
 | Parámetro | Valor (mm) |
 |:----------|-----------:|
-| Longitud | |
-| Ancho máximo | |
-| Apertura máxima | |
+| Longitud útil | 38,15 |
+| Ancho útil | 29,0 |
+
+
 
 
 <h3>Actividad 6. Determinación de límites seguros</h3>
