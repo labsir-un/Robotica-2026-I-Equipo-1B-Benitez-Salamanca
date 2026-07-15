@@ -29,66 +29,37 @@ Nota: La columna ID DYNAMIXEL se omitió debido a que no se contaba con el model
 
 
 
-<h3>Actividad 3. Medición del robot</h3>
+Se pueden centrar estas tablas?
+### Actividad 3. Medición del robot
 
-<p>
-Las dimensiones del robot fueron obtenidas a partir de la medición de los archivos STL del modelo tridimensional disponible en el repositorio. Las dimensiones estructurales se obtienen a partir de la altura de la base y la distancia entre articulaciones para las demás medidas solicitadas.
-</p>
+Las dimensiones del robot fueron obtenidas a partir de la medición de los archivos STL del modelo tridimensional disponible en el repositorio.  Las dimensiones estructurales se obtienen a partir de la altura de la base y la distancia entre articulaciones para las demás medidas solicitadas.
 
-<h4>Dimensiones estructurales</h4>
+#### Dimensiones estructurales
 
-<table align="center">
-  <thead>
-    <tr>
-      <th align="center">Parámetro</th>
-      <th align="center">Valor (mm)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td align="center">Altura de la base</td><td align="center">52,6</td></tr>
-    <tr><td align="center">Distancia Base – Hombro</td><td align="center">44,5</td></tr>
-    <tr><td align="center">Distancia Hombro – Codo</td><td align="center">105,7</td></tr>
-    <tr><td align="center">Distancia Codo – Muñeca</td><td align="center">100,0</td></tr>
-    <tr><td align="center">Distancia Muñeca – TCP</td><td align="center">107,6</td></tr>
-  </tbody>
-</table>
+| Parámetro | Valor (mm) |
+|:----------|-----------:|
+| Altura de la base | 52,6 |
+| Distancia Base – Hombro | 44,5 |
+| Distancia Hombro – Codo | 105,7 |
+| Distancia Codo – Muñeca | 100,0 |
+| Distancia Muñeca – TCP | 113,6 |
 
-<p>
-La longitud de los eslabones se mide como el largo físico de cada eslabón y no como la distancia entre articulaciones.
-</p>
+Luego la longitud de los eslabones se mide como el alto o largo de cada eslabón y no como la distancia entre articulaciones.
 
-<h4>Longitud de los eslabones</h4>
+#### Longitud de los eslabones
 
-<table align="center">
-  <thead>
-    <tr>
-      <th align="center">Eslabón</th>
-      <th align="center">Longitud (mm)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td align="center">Eslabón 1</td><td align="center">157,0</td></tr>
-    <tr><td align="center">Eslabón 2</td><td align="center">114,2</td></tr>
-    <tr><td align="center">Eslabón 3</td><td align="center">66,0</td></tr>
-  </tbody>
-</table>
+| Eslabón | Longitud (mm) |
+|:---------|--------------:|
+| Eslabón 1 | 157,0 |
+| Eslabón 2 | 114,2 |
+| Eslabón 3 | 66,0 |
 
-<h4>Dimensiones de la pinza</h4>
+#### Dimensiones de la pinza
 
-<table align="center">
-  <thead>
-    <tr>
-      <th align="center">Parámetro</th>
-      <th align="center">Valor (mm)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td align="center">Longitud útil</td><td align="center">38,15</td></tr>
-    <tr><td align="center">Ancho útil</td><td align="center">29,0</td></tr>
-  </tbody>
-</table>
-
-
+| Parámetro | Valor (mm) |
+|:----------|-----------:|
+| Longitud útil | 38,15 |
+| Ancho útil | 29,0 |
 
 <h3>Actividad 6. Determinación de límites seguros</h3>
 
