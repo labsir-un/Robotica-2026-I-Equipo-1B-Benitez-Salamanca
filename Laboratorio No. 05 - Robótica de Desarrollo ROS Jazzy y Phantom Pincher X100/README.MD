@@ -38,7 +38,7 @@ Las dimensiones del robot fueron obtenidas a partir de la medición de los archi
 
 | Parámetro | Valor (mm) |
 |:----------|-----------:|
-| Altura de la base | 52,6 |
+| Altura de la base | 48 |
 | Distancia Base – Hombro | 44,5 |
 | Distancia Hombro – Codo | 105,7 |
 | Distancia Codo – Muñeca | 100,0 |
