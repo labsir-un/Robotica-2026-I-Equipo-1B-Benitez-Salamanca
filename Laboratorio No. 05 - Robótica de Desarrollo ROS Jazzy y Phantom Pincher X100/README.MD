@@ -27,6 +27,37 @@
 
 Nota: La columna ID DYNAMIXEL se omitió debido a que no se contaba con el modelo físico que nos permitía conocer esta característica.
 
+### Actividad 3. Medición del robot
+
+Las dimensiones del robot fueron obtenidas a partir de la medición de los archivos STL del modelo tridimensional disponible en el repositorio. Todas las medidas corresponden a valores aproximados.
+
+#### Dimensiones estructurales
+
+| Parámetro | Valor (mm) |
+|:----------|-----------:|
+| Altura de la base | |
+| Distancia Base – Hombro | |
+| Distancia Hombro – Codo | |
+| Distancia Codo – Muñeca | |
+| Distancia Muñeca – TCP | |
+
+#### Longitud de los eslabones
+
+| Eslabón | Longitud (mm) |
+|:---------|--------------:|
+| Eslabón 1 | |
+| Eslabón 2 | |
+| Eslabón 3 | |
+
+#### Dimensiones de la pinza
+
+| Parámetro | Valor (mm) |
+|:----------|-----------:|
+| Longitud | |
+| Ancho máximo | |
+| Apertura máxima | |
+
+
 <h3>Actividad 6. Determinación de límites seguros</h3>
 
 <p>
