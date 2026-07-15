@@ -27,6 +27,8 @@
 
 Nota: La columna ID DYNAMIXEL se omitió debido a que no se contaba con el modelo físico que nos permitía conocer esta característica.
 
+---
+
 ### Actividad 3. Medición del robot
 
 Las dimensiones del robot fueron obtenidas a partir de la medición de los archivos STL del modelo tridimensional disponible en el repositorio. Todas las medidas corresponden a valores aproximados.
