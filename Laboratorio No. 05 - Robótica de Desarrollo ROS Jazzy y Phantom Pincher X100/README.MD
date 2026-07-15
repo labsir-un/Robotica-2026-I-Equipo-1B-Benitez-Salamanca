@@ -64,7 +64,7 @@ Luego la longitud de los eslabones se mide como el alto o largo de cada eslabón
 El esquema que permite conocer con mayor facilidad las distancias entre juntas, orientación y tipo de juntas se muestra a continuación.
 
 <p align="center">
-  <img src="Diagramas-Imágenes/Esquema.png" alt="Esquema del robot" width="400"><br>
+  <img src="Diagramas-Imágenes/Esquema.png" alt="Esquema del robot" width="550"><br>
   <em>Figura 1. Esquema del robot PhantomX100.</em>
 </p>
 
