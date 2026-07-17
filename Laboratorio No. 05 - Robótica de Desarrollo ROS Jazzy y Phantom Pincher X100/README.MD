@@ -194,18 +194,13 @@ Los parámetros DH utilizados para el modelo del robot se muestran en la siguien
 
 </div>
 
-A partir de estos parámetros se implementó un programa en Python (`fk_phantom.py`) que construye las matrices de transformación homogénea de cada articulación,
+A partir de estos parámetros se implementó un programa en Python (`fk_phantom.py`) que construye las matrices de transformación homogénea de cada articulación; posteriormente, el programa calcula la transformación homogénea total del manipulador mediante el producto matricial:
 
-\[
-A_i(\theta_i,d_i,a_i,\alpha_i),
-\]
+```text
+T₀_TCP = A₁ · A₂ · A₃ · A₄ · A₅
+```
 
-y posteriormente calcula la transformación total del manipulador mediante
-
-\[
-T_{0}^{TCP}=A_1A_2A_3A_4A_5.
-\]
-
+A partir de esta matriz se obtiene la posición cartesiana del TCP (`x`, `y`, `z`) y la orientación del efector final en términos de los ángulos **Roll**, **Pitch** y **Yaw**.
 El programa recibe como entrada las variables articulares del brazo
 
 - q₁: Base
