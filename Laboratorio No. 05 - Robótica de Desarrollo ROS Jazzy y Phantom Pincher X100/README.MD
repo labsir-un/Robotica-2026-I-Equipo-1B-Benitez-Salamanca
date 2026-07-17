@@ -121,8 +121,52 @@ programa debe impedir el envío de comandos fuera de estos rangos.
   </tbody>
 </table>
 
+### Actividad 7. Movimiento simultáneo
 
-### Actividad 7. Medición del robot
+Se implementó el desplazamiento simultáneo de las cinco articulaciones del robot mediante el envío de comandos articulares en el tópico `/pincher/command`. Cada configuración fue ejecutada de forma secuencial y validada en la simulación de RViz. Los valores corresponden a ángulos articulares expresados en grados para las articulaciones Base, Hombro, Codo, Muñeca y Pinza, respectivamente.
+
+#### Configuración 1
+**Coordenadas:** `(0°, 0°, 0°, 0°, 0°)`
+
+<p align="center">
+  <img src="Diagramas-Imágenes/Actividad_7_E1.gif" width="700">
+</p>
+
+---
+
+#### Configuración 2
+**Coordenadas:** `(25°, 25°, 20°, -20°, 0°)`
+
+<p align="center">
+  <img src="Diagramas-Imágenes/Actividad_7_E2.gif" width="700">
+</p>
+
+---
+
+#### Configuración 3
+**Coordenadas:** `(-35°, 35°, -30°, 30°, 0°)`
+
+<p align="center">
+  <img src="Diagramas-Imágenes/Actividad_7_E3.gif" width="700">
+</p>
+
+---
+
+#### Configuración 4
+**Coordenadas:** `(85°, -20°, 55°, 25°, 0°)`
+
+<p align="center">
+  <img src="Diagramas-Imágenes/Actividad_7_E4.gif" width="700">
+</p>
+
+---
+
+#### Configuración 5
+**Coordenadas:** `(80°, -35°, 55°, -45°, 0°)`
+
+<p align="center">
+  <img src="Diagramas-Imágenes/Actividad_7_E5.gif" width="700">
+</p>
 
 <p align="center">
   <img src="Diagramas-Imágenes/Actividad_7_E1.gif" width="700">
