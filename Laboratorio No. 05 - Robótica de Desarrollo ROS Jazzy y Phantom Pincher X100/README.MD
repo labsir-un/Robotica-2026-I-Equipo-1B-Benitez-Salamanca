@@ -120,3 +120,10 @@ programa debe impedir el envío de comandos fuera de estos rangos.
     </tr>
   </tbody>
 </table>
+
+
+### Actividad 7. Medición del robot
+
+<p align="center">
+  <img src="Diagramas-Imágenes/Actividad_7_E1.gif" width="700">
+</p>
