@@ -169,6 +169,60 @@ Se implementó el desplazamiento simultáneo de las cinco articulaciones del rob
 <p align="center">
   <img src="Diagramas-Imágenes/Actividad_7_E5.gif" width="700">
 </p>
-### Actividad 8.  Movimiento secuencial
+
+## Actividad 8.  Movimiento secuencial
 Para dar solución a esto se reuso el script que se uso para la actividad número 5, se escogio el desplazamiento numero 5 ( 80, −35, 55, −45, 0.) y como se puede observar en el video se haciendo el movimiento secuencial se llega al mismo lugar
 
+
+
+
+## Actividad 11. Cinemática directa
+
+La cinemática directa del Phantom X Pincher se implementó mediante la parametrización de Denavit–Hartenberg (DH), la cual permite describir la geometría del manipulador mediante una secuencia de transformaciones homogéneas entre sistemas de referencia consecutivos.
+
+Los parámetros DH utilizados para el modelo del robot se muestran en la siguiente tabla. En las articulaciones tercera y cuarta se incluyen los desfases angulares propios de la geometría del manipulador, originados por el eslabón en forma de "L".
+
+<div align="center">
+
+| i | θ<sub>i</sub> | d<sub>i</sub> (mm) | α<sub>i</sub> (°) | a<sub>i</sub> (mm) |
+|:-:|:-------------:|:------------------:|:-----------------:|:------------------:|
+| 1 | q₁ | 48,0 | 0 | 0 |
+| 2 | q₂ + 90° | 44,5 | 90 | 0 |
+| 3 | q₃ + 19,33° | 0 | 0 | 105,71 |
+| 4 | q₄ − 19,33° | 0 | 0 | 100,0 |
+| 5 | 0 | 0 | 0 | 113,6 |
+
+</div>
+
+A partir de estos parámetros se implementó un programa en Python (`fk_phantom.py`) que construye las matrices de transformación homogénea de cada articulación,
+
+\[
+A_i(\theta_i,d_i,a_i,\alpha_i),
+\]
+
+y posteriormente calcula la transformación total del manipulador mediante
+
+\[
+T_{0}^{TCP}=A_1A_2A_3A_4A_5.
+\]
+
+El programa recibe como entrada las variables articulares del brazo
+
+- q₁: Base
+- q₂: Hombro
+- q₃: Codo
+- q₄: Muñeca
+
+y calcula automáticamente la pose del TCP, obteniendo como salida:
+
+- Posición cartesiana:
+  - x
+  - y
+  - z
+
+- Orientación:
+  - Roll
+  - Pitch
+  - Yaw
+
+Adicionalmente, el programa reutiliza el controlador desarrollado en la Actividad 7 para desplazar simultáneamente las articulaciones hasta la configuración ingresada. De esta manera, la posición calculada mediante la cinemática directa puede compararse directamente con la pose observada en RViz, permitiendo validar la implementación del modelo cinemático.
