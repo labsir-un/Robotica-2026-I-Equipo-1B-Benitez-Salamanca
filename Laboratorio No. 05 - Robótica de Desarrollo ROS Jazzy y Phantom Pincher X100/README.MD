@@ -67,6 +67,8 @@ El esquema que permite conocer con mayor facilidad las distancias entre juntas, 
   <img src="Diagramas-Imágenes/Esquema.png" alt="Esquema del robot" width="550"><br>
   <em>Figura 1. Esquema del robot PhantomX100.</em>
 </p>
+<h3>Actividad 4. Determinación de límites seguros</h3>
+para realizar esta actividad se creo un script el cual funciona como un menú donde por consola se escoge la articualción que se va a mover, luego de esto se le da el angulo que se quiere mover en radianes, esto se puede ver en el sigueinte video:
 
 <h3>Actividad 6. Determinación de límites seguros</h3>
 
