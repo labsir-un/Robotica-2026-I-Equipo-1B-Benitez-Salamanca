@@ -168,6 +168,3 @@ Se implementó el desplazamiento simultáneo de las cinco articulaciones del rob
   <img src="Diagramas-Imágenes/Actividad_7_E5.gif" width="700">
 </p>
 
-<p align="center">
-  <img src="Diagramas-Imágenes/Actividad_7_E1.gif" width="700">
-</p>
