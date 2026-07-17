@@ -169,4 +169,6 @@ Se implementó el desplazamiento simultáneo de las cinco articulaciones del rob
 <p align="center">
   <img src="Diagramas-Imágenes/Actividad_7_E5.gif" width="700">
 </p>
+### Actividad 8.  Movimiento secuencial
+Para dar solución a esto se reuso el script que se uso para la actividad número 5, se escogio el desplazamiento numero 5 ( 80, −35, 55, −45, 0.) y como se puede observar en el video se haciendo el movimiento secuencial se llega al mismo lugar
 
