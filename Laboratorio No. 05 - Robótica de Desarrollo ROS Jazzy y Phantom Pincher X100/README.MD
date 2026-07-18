@@ -239,21 +239,23 @@ A partir de esta matriz se extraen automáticamente:
   - Pitch
   - Yaw
 
-El programa `fk_phantom.py` recibe como entrada los ángulos articulares **q₁**, **q₂**, **q₃** y **q₄**, calcula la cinemática directa y, simultáneamente, publica dichas posiciones sobre el tópico `/pincher/command`, realizando una interpolación lineal desde la configuración actual hasta la configuración objetivo. Esto permite comparar directamente la pose calculada con la visualizada en RViz, verificando la correcta implementación del modelo cinemático.
+El programa `fk_phantom.py` recibe como entrada los ángulos articulares q₁, q₂, q₃ y q₄, calcula la cinemática directa y, simultáneamente, publica dichas posiciones sobre el tópico `/pincher/command`, realizando una interpolación lineal desde la configuración actual hasta la configuración objetivo. Esto permite comparar directamente la pose calculada con la visualizada en RViz, verificando la correcta implementación del modelo cinemático.
 
 ### Posición 1
 
 **Coordenadas articulares:** (0°, 0°, 0°, 0°)
 
 <div align="center">
-    <img src="Diagramas-Imágenes/Actividad11_E1.gif" width="500">
-</div>
+    <img src="Diagramas-Imágenes/Actividad11_E1.gif" width="700">
+
 
 | Método | x (mm) | y (mm) | z (mm) |
 |:------:|-------:|-------:|-------:|
 | Cinemática directa | 248.591 | 0.000 | 192.251 |
 | RViz | 251.500 | 0.000 | 190.450 |
 | Error absoluto | 2.909 | 0.000 | 1.801 |
+
+</div>
 
 Se observa una buena correspondencia entre la posición calculada y la reportada por RViz, con un error máximo inferior a **3 mm**.
 
@@ -264,14 +266,18 @@ Se observa una buena correspondencia entre la posición calculada y la reportada
 **Coordenadas articulares:** (25°, 25°, 20°, -20°)
 
 <div align="center">
-    <img src="Diagramas-Imágenes/Actividad11_E2.gif" width="500">
-</div>
+    <img src="Diagramas-Imágenes/Actividad11_E2.gif" width="700">
+
+
 
 | Método | x (mm) | y (mm) | z (mm) |
 |:------:|-------:|-------:|-------:|
 | Cinemática directa | 224.344 | 104.613 | 49.397 |
 | RViz | 227.283 | 105.630 | 46.359 |
 | Error absoluto | 2.939 | 1.017 | 3.038 |
+
+
+</div>
 
 La diferencia entre ambos resultados permanece cercana a los **3 mm**, validando el modelo para esta configuración.
 
