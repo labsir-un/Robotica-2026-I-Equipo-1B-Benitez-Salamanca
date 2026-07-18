@@ -180,7 +180,7 @@ Para dar solución a esto se reuso el script que se uso para la actividad númer
 La cinemática directa del robot Phantom X Pincher se implementó utilizando la convención clásica de Denavit–Hartenberg (DH). El anáisis se realiza mediante la siguiente convención de sistemas coordenados.
 
 <p align="center">
-  <img src="Diagramas-Imágenes/DH_esquema.jepg" width="700">
+  <img src="Diagramas-Imágenes/DH_esquema.jpeg" width="700">
 </p>
 
 
