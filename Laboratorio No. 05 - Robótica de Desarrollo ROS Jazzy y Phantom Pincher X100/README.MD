@@ -185,7 +185,7 @@ La cinemática directa del robot Phantom X Pincher se implementó utilizando la 
 
 
 
-Tras analizar la geometría del manipulador y redefinir los sistemas de referencia, se obtuvo la siguiente parametrización:
+Del anterior gráfico se obtuvo la siguiente tabla DH:
 
 <div align="center">
 
@@ -241,4 +241,3 @@ A partir de esta matriz se extraen automáticamente:
 
 El programa `fk_phantom.py` recibe como entrada los ángulos articulares **q₁**, **q₂**, **q₃** y **q₄**, calcula la cinemática directa y, simultáneamente, publica dichas posiciones sobre el tópico `/pincher/command`, realizando una interpolación lineal desde la configuración actual hasta la configuración objetivo. Esto permite comparar directamente la pose calculada con la visualizada en RViz, verificando la correcta implementación del modelo cinemático.
 
-Durante el desarrollo fue necesario redefinir los sistemas de referencia utilizados en la parametrización DH, ya que inicialmente el sistema base se había asociado al marco del mundo y no al eje de la primera articulación. Una vez corregida esta asignación y actualizada la transformación fija del TCP (`TNOA`), la posición y orientación calculadas coincidieron con el comportamiento observado en la simulación.
