@@ -177,9 +177,9 @@ Para dar solución a esto se reuso el script que se uso para la actividad númer
 
 ## Actividad 11. Cinemática directa
 
-La cinemática directa del robot **Phantom X Pincher** se implementó mediante la parametrización de **Denavit–Hartenberg (DH)**, la cual permite describir la geometría del manipulador mediante una secuencia de transformaciones homogéneas entre sistemas de referencia consecutivos.
+La cinemática directa del robot Phantom X Pincher se implementó mediante la parametrización de Denavit–Hartenberg (DH), la cual permite describir la geometría del manipulador mediante una secuencia de transformaciones homogéneas entre sistemas de referencia consecutivos.
 
-Los parámetros DH obtenidos para el robot se presentan a continuación. Debido a la geometría del manipulador, se consideran los desfases angulares de las articulaciones tercera y cuarta, además de la orientación del segundo sistema de referencia, con el fin de que el modelo cinemático reproduzca correctamente la configuración observada en RViz.
+Los parámetros DH obtenidos para el robot se presentan a continuación. Debido a la geometría del manipulador, se consideran los desfases angulares de las articulaciones tercera y cuarta, con el fin de que el modelo cinemático reproduzca correctamente la configuración observada en RViz.
 
 <div align="center">
 
@@ -218,4 +218,4 @@ y calcula automáticamente la pose del efector final (TCP), obteniendo como sali
   - Pitch
   - Yaw
 
-Adicionalmente, el programa integra el controlador articular desarrollado en la **Actividad 7**, permitiendo desplazar el robot de manera suave hasta la configuración ingresada. De esta forma, la posición calculada mediante la cinemática directa puede compararse directamente con la pose observada en **RViz**, verificando la correcta implementación del modelo cinemático.
+Adicionalmente, el programa permite desplazar el robot de manera suave hasta la configuración ingresada. De esta forma, la posición calculada mediante la cinemática directa puede compararse directamente con la pose observada en RViz, verificando la correcta implementación del modelo cinemático.
