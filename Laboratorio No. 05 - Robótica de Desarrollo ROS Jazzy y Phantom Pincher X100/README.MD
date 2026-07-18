@@ -241,3 +241,95 @@ A partir de esta matriz se extraen automáticamente:
 
 El programa `fk_phantom.py` recibe como entrada los ángulos articulares **q₁**, **q₂**, **q₃** y **q₄**, calcula la cinemática directa y, simultáneamente, publica dichas posiciones sobre el tópico `/pincher/command`, realizando una interpolación lineal desde la configuración actual hasta la configuración objetivo. Esto permite comparar directamente la pose calculada con la visualizada en RViz, verificando la correcta implementación del modelo cinemático.
 
+### Posición 1
+
+**Coordenadas articulares:** (0°, 0°, 0°, 0°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad11_E1.gif" width="500">
+</div>
+
+| Método | x (mm) | y (mm) | z (mm) |
+|:------:|-------:|-------:|-------:|
+| Cinemática directa | 248.591 | 0.000 | 192.251 |
+| RViz | 251.500 | 0.000 | 190.450 |
+| Error absoluto | 2.909 | 0.000 | 1.801 |
+
+Se observa una buena correspondencia entre la posición calculada y la reportada por RViz, con un error máximo inferior a **3 mm**.
+
+---
+
+### Posición 2
+
+**Coordenadas articulares:** (25°, 25°, 20°, -20°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad11_E2.gif" width="500">
+</div>
+
+| Método | x (mm) | y (mm) | z (mm) |
+|:------:|-------:|-------:|-------:|
+| Cinemática directa | 224.344 | 104.613 | 49.397 |
+| RViz | 227.283 | 105.630 | 46.359 |
+| Error absoluto | 2.939 | 1.017 | 3.038 |
+
+La diferencia entre ambos resultados permanece cercana a los **3 mm**, validando el modelo para esta configuración.
+
+---
+
+### Posición 3
+
+**Coordenadas articulares:** (-35°, 35°, -30°, 30°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad11_E3.gif" width="500">
+</div>
+
+| Método | x (mm) | y (mm) | z (mm) |
+|:------:|-------:|-------:|-------:|
+| Cinemática directa | 228.177 | -159.771 | 80.267 |
+| RViz | 231.157 | -161.242 | 77.409 |
+| Error absoluto | 2.980 | 1.471 | 2.858 |
+
+La cinemática directa reproduce adecuadamente la posición del TCP, con errores inferiores a **3 mm** en cada componente.
+
+---
+
+### Posición 4
+
+**Coordenadas articulares:** (85°, -20°, 55°, 25°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad11_E4.gif" width="500">
+</div>
+
+| Método | x (mm) | y (mm) | z (mm) |
+|:------:|-------:|-------:|-------:|
+| Cinemática directa | 11.982 | 136.956 | 42.465 |
+| RViz | 11.835 | 136.482 | 33.753 |
+| Error absoluto | 0.147 | 0.474 | 8.712 |
+
+En esta configuración se obtiene el mayor error sobre el eje **Z** (≈ 8.7 mm), mientras que las componentes **X** y **Y** presentan diferencias inferiores a **1 mm**.
+
+---
+
+### Posición 5
+
+**Coordenadas articulares:** (80°, -35°, 55°, -45°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad11_E5.gif" width="500">
+</div>
+
+| Método | x (mm) | y (mm) | z (mm) |
+|:------:|-------:|-------:|-------:|
+| Cinemática directa | 29.238 | 165.816 | 208.089 |
+| RViz | 29.520 | 168.422 | 204.978 |
+| Error absoluto | 0.282 | 2.606 | 3.111 |
+
+La comparación muestra nuevamente una buena concordancia entre el modelo cinemático y la simulación, con diferencias del orden de pocos milímetros.
+
+---
+
+En términos generales, las cinco pruebas muestran una buena correspondencia entre la cinemática directa implementada y la posición del TCP reportada por RViz. Las diferencias observadas pueden atribuirse a aproximaciones en las dimensiones del modelo, al redondeo de los parámetros DH y a la definición del TCP respecto al último sistema de referencia.
+
