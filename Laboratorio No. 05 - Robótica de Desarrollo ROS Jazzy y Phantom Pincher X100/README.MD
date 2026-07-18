@@ -177,45 +177,60 @@ Para dar solución a esto se reuso el script que se uso para la actividad númer
 
 ## Actividad 11. Cinemática directa
 
-La cinemática directa del robot Phantom X Pincher se implementó mediante la parametrización de Denavit–Hartenberg (DH), la cual permite describir la geometría del manipulador mediante una secuencia de transformaciones homogéneas entre sistemas de referencia consecutivos.
-
-Los parámetros DH obtenidos para el robot se presentan a continuación. Debido a la geometría del manipulador, se consideran los desfases angulares de las articulaciones tercera y cuarta, con el fin de que el modelo cinemático reproduzca correctamente la configuración observada en RViz.
+La cinemática directa del robot **Phantom X Pincher** se implementó utilizando la convención clásica de **Denavit–Hartenberg (DH)**. Tras analizar la geometría del manipulador y redefinir los sistemas de referencia, se obtuvo la siguiente parametrización:
 
 <div align="center">
 
 | i | θ<sub>i</sub> | d<sub>i</sub> (mm) | α<sub>i</sub> (°) | a<sub>i</sub> (mm) |
 |:-:|:-------------:|:------------------:|:-----------------:|:------------------:|
-| 1 | q₁ | 48,0 | 0 | 0 |
-| 2 | q₂ | 44,5 | 90 | 0 |
-| 3 | q₃ + 19,33° | 0 | 0 | 105,71 |
-| 4 | q₄ − 19,33° | 0 | 0 | 100,0 |
-| 5 | 0 | 0 | 0 | 113,6 |
+| 1 | q₁ | 92.5 | -90 | 0 |
+| 2 | q₂ − 70.67° | 0 | 0 | 105.71 |
+| 3 | q₃ + 70.67° | 0 | 0 | 100.0 |
+| 4 | q₄ | 0 | 0 | 66.6 |
 
 </div>
 
-A partir de estos parámetros se desarrolló el programa `fk_phantom.py`, el cual construye las matrices de transformación homogénea de cada articulación (**A₁, A₂, A₃, A₄ y A₅**) y posteriormente calcula la transformación homogénea total del manipulador mediante
+Cada transformación homogénea se calcula mediante
 
 ```text
-T₀_TCP = A₁ · A₂ · A₃ · A₄ · A₅
+Aᵢ = Rz(θᵢ) · Tz(dᵢ) · Tx(aᵢ) · Rx(αᵢ)
 ```
 
-El programa recibe como entrada las variables articulares:
+obteniendo la transformación hasta el último sistema de referencia del manipulador
 
-- q₁: Base
-- q₂: Hombro
-- q₃: Codo
-- q₄: Muñeca
+```text
+T₀₄ = A₁ · A₂ · A₃ · A₄
+```
 
-y calcula automáticamente la pose del efector final (TCP), obteniendo como salida:
+El TCP del Phantom X Pincher no coincide con el origen del último marco DH, por lo que se definió una transformación homogénea fija entre ambos sistemas de referencia:
 
-- **Posición cartesiana**
+```text
+        ┌                      ┐
+        │  0   0   1   47.0    │
+TNOA =  │ -1   0   0    0.0    │
+        │  0  -1   0    0.0    │
+        │  0   0   0    1.0    │
+        └                      ┘
+```
+
+La pose final del efector se obtiene mediante
+
+```text
+T₀TCP = T₀₄ · TNOA
+```
+
+A partir de esta matriz se extraen automáticamente:
+
+- Posición cartesiana del TCP:
   - x
   - y
   - z
 
-- **Orientación**
+- Orientación del TCP:
   - Roll
   - Pitch
   - Yaw
 
-Adicionalmente, el programa permite desplazar el robot de manera suave hasta la configuración ingresada. De esta forma, la posición calculada mediante la cinemática directa puede compararse directamente con la pose observada en RViz, verificando la correcta implementación del modelo cinemático.
+El programa `fk_phantom.py` recibe como entrada los ángulos articulares **q₁**, **q₂**, **q₃** y **q₄**, calcula la cinemática directa y, simultáneamente, publica dichas posiciones sobre el tópico `/pincher/command`, realizando una interpolación lineal desde la configuración actual hasta la configuración objetivo. Esto permite comparar directamente la pose calculada con la visualizada en RViz, verificando la correcta implementación del modelo cinemático.
+
+Durante el desarrollo fue necesario redefinir los sistemas de referencia utilizados en la parametrización DH, ya que inicialmente el sistema base se había asociado al marco del mundo y no al eje de la primera articulación. Una vez corregida esta asignación y actualizada la transformación fija del TCP (`TNOA`), la posición y orientación calculadas coincidieron con el comportamiento observado en la simulación.
