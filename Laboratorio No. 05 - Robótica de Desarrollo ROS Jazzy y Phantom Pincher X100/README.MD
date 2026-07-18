@@ -177,7 +177,15 @@ Para dar solución a esto se reuso el script que se uso para la actividad númer
 
 ## Actividad 11. Cinemática directa
 
-La cinemática directa del robot **Phantom X Pincher** se implementó utilizando la convención clásica de **Denavit–Hartenberg (DH)**. Tras analizar la geometría del manipulador y redefinir los sistemas de referencia, se obtuvo la siguiente parametrización:
+La cinemática directa del robot Phantom X Pincher se implementó utilizando la convención clásica de Denavit–Hartenberg (DH). El anáisis se realiza mediante la siguiente convención de sistemas coordenados.
+
+<p align="center">
+  <img src="Diagramas-Imágenes/DH_esquema.jepg" width="700">
+</p>
+
+
+
+Tras analizar la geometría del manipulador y redefinir los sistemas de referencia, se obtuvo la siguiente parametrización:
 
 <div align="center">
 
