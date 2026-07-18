@@ -175,49 +175,47 @@ Para dar solución a esto se reuso el script que se uso para la actividad númer
 
 
 
-
 ## Actividad 11. Cinemática directa
 
-La cinemática directa del Phantom X Pincher se implementó mediante la parametrización de Denavit–Hartenberg (DH), la cual permite describir la geometría del manipulador mediante una secuencia de transformaciones homogéneas entre sistemas de referencia consecutivos.
+La cinemática directa del robot **Phantom X Pincher** se implementó mediante la parametrización de **Denavit–Hartenberg (DH)**, la cual permite describir la geometría del manipulador mediante una secuencia de transformaciones homogéneas entre sistemas de referencia consecutivos.
 
-Los parámetros DH utilizados para el modelo del robot se muestran en la siguiente tabla. En las articulaciones tercera y cuarta se incluyen los desfases angulares propios de la geometría del manipulador, originados por el eslabón en forma de "L".
+Los parámetros DH obtenidos para el robot se presentan a continuación. Debido a la geometría del manipulador, se consideran los desfases angulares de las articulaciones tercera y cuarta, además de la orientación del segundo sistema de referencia, con el fin de que el modelo cinemático reproduzca correctamente la configuración observada en RViz.
 
 <div align="center">
 
 | i | θ<sub>i</sub> | d<sub>i</sub> (mm) | α<sub>i</sub> (°) | a<sub>i</sub> (mm) |
 |:-:|:-------------:|:------------------:|:-----------------:|:------------------:|
 | 1 | q₁ | 48,0 | 0 | 0 |
-| 2 | q₂ + 90° | 44,5 | 90 | 0 |
+| 2 | q₂ | 44,5 | 90 | 0 |
 | 3 | q₃ + 19,33° | 0 | 0 | 105,71 |
 | 4 | q₄ − 19,33° | 0 | 0 | 100,0 |
 | 5 | 0 | 0 | 0 | 113,6 |
 
 </div>
 
-A partir de estos parámetros se implementó un programa en Python (`fk_phantom.py`) que construye las matrices de transformación homogénea de cada articulación; posteriormente, el programa calcula la transformación homogénea total del manipulador mediante el producto matricial:
+A partir de estos parámetros se desarrolló el programa `fk_phantom.py`, el cual construye las matrices de transformación homogénea de cada articulación (**A₁, A₂, A₃, A₄ y A₅**) y posteriormente calcula la transformación homogénea total del manipulador mediante
 
 ```text
 T₀_TCP = A₁ · A₂ · A₃ · A₄ · A₅
 ```
 
-A partir de esta matriz se obtiene la posición cartesiana del TCP (`x`, `y`, `z`) y la orientación del efector final en términos de los ángulos **Roll**, **Pitch** y **Yaw**.
-El programa recibe como entrada las variables articulares del brazo
+El programa recibe como entrada las variables articulares:
 
 - q₁: Base
 - q₂: Hombro
 - q₃: Codo
 - q₄: Muñeca
 
-y calcula automáticamente la pose del TCP, obteniendo como salida:
+y calcula automáticamente la pose del efector final (TCP), obteniendo como salida:
 
-- Posición cartesiana:
+- **Posición cartesiana**
   - x
   - y
   - z
 
-- Orientación:
+- **Orientación**
   - Roll
   - Pitch
   - Yaw
 
-Adicionalmente, el programa reutiliza el controlador desarrollado en la Actividad 7 para desplazar simultáneamente las articulaciones hasta la configuración ingresada. De esta manera, la posición calculada mediante la cinemática directa puede compararse directamente con la pose observada en RViz, permitiendo validar la implementación del modelo cinemático.
+Adicionalmente, el programa integra el controlador articular desarrollado en la **Actividad 7**, permitiendo desplazar el robot de manera suave hasta la configuración ingresada. De esta forma, la posición calculada mediante la cinemática directa puede compararse directamente con la pose observada en **RViz**, verificando la correcta implementación del modelo cinemático.
