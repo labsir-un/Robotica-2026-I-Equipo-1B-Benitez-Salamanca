@@ -552,3 +552,70 @@ Se obtiene una solución factible que satisface simultáneamente la posición y 
 </div>
 
 La solución obtenida permite alcanzar el objetivo solicitado respetando las restricciones geométricas y los límites articulares definidos para el manipulador.
+
+
+## Actividad 13. Enseñanza y repetición de poses
+
+Se desarrolló un nodo denominado `teach_repeat.py` que implementa un modo de enseñanza para el robot Phantom X Pincher. El programa permite registrar configuraciones articulares directamente desde la posición actual del manipulador, almacenarlas en un archivo YAML y reproducirlas posteriormente en el mismo orden en que fueron registradas.
+
+### Características implementadas
+
+- Registro de la configuración articular actual.
+- Asignación de un nombre a cada pose.
+- Almacenamiento automático en un archivo `poses.yaml`.
+- Capacidad de almacenar múltiples poses (mínimo ocho).
+- Reproducción secuencial de las poses registradas.
+- Modificación del tiempo de transición entre poses.
+- Detención inmediata de la reproducción.
+- Visualización de las poses almacenadas y de la configuración articular actual.
+
+### Ejecución
+
+```bash
+python3 teach_repeat.py
+```
+
+Al iniciar el programa se presenta un menú interactivo.
+
+### Comandos disponibles
+
+| Comando | Descripción |
+|---------|-------------|
+| `guardar nombre` | Guarda la configuración articular actual con el nombre indicado. |
+| `listar` | Muestra todas las poses almacenadas. |
+| `actual` | Muestra la configuración articular actual del robot. |
+| `reproducir` | Ejecuta todas las poses en el orden en que fueron registradas. |
+| `tiempo segundos` | Modifica el tiempo de transición entre poses. |
+| `detener` | Detiene la reproducción en cualquier momento. |
+| `eliminar nombre` | Elimina una pose del archivo YAML. |
+| `salir` | Finaliza el programa. |
+
+### Archivo YAML
+
+Las poses se almacenan en el archivo `poses.yaml` utilizando el siguiente formato:
+
+```yaml
+home:
+  joints:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+
+pose1:
+  joints:
+  - 0.5236
+  - -0.3491
+  - 0.7854
+  - -0.2618
+  - 0.0
+```
+
+Cada pose almacena las cinco coordenadas articulares del manipulador en radianes, lo que permite reconstruir exactamente la configuración registrada durante la etapa de enseñanza.
+
+### Funcionamiento
+
+El nodo obtiene continuamente la configuración articular del robot mediante el tópico `/joint_states`. Cuando el usuario ejecuta el comando `guardar`, la configuración actual se almacena en memoria y posteriormente se escribe en el archivo YAML.
+
+Durante la reproducción, el programa lee las poses registradas respetando el orden de almacenamiento y genera una interpolación lineal entre configuraciones articulares, publicando las posiciones sobre el tópico `/pincher/command`. De esta forma el movimiento entre poses es continuo y el tiempo de transición puede modificarse por el usuario.
