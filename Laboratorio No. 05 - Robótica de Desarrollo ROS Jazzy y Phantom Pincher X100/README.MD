@@ -349,8 +349,6 @@ En términos generales, las cinco pruebas muestran una buena correspondencia ent
 
 ## Actividad 12: Cinemática inversa
 
-# Cinemática inversa
-
 La implementación de la cinemática inversa permite calcular una configuración articular válida a partir de una posición y orientación deseadas del TCP.
 
 El nodo recibe como entrada:
@@ -367,169 +365,150 @@ La salida corresponde a los cuatro ángulos articulares del manipulador:
 - \(q_3\): codo.
 - \(q_4\): muñeca.
 
----
-
 ### 1. Cálculo de la articulación de la base
 
-La primera articulación únicamente orienta el manipulador hacia el punto solicitado sobre el plano XY.
+La primera articulación orienta el manipulador hacia el punto deseado sobre el plano \(XY\).
 
-\[
+$$
 q_1=\operatorname{atan2}(P_y,P_x)
-\]
+$$
 
 Posteriormente se calcula la distancia radial al objetivo
 
-\[
+$$
 r=\sqrt{P_x^2+P_y^2}
-\]
-
----
+$$
 
 ### 2. Cálculo del centro de la muñeca
 
-Debido a que el TCP se encuentra separado una distancia \(l_3\) de la articulación de la muñeca, primero se determina el centro de la muñeca.
+Como el TCP se encuentra separado una distancia \(l_3\) de la articulación de la muñeca, primero se determina la posición del centro de la muñeca.
 
-\[
-r_w=r-l_3\cos\theta
-\]
+$$
+r_w=r-l_3\cos(\theta)
+$$
 
-\[
-z_w=P_z-l_3\sin\theta
-\]
+$$
+z_w=P_z-l_3\sin(\theta)
+$$
 
-Con estas coordenadas se calcula la distancia desde el hombro hasta el centro de la muñeca
+Con estas coordenadas se calcula la distancia entre el hombro y la muñeca.
 
-\[
+$$
 H=\sqrt{(z_w-d_1)^2+r_w^2}
-\]
+$$
 
 donde \(d_1\) corresponde a la altura de la base.
 
 Antes de continuar se verifica que el punto pertenezca al espacio de trabajo del robot.
 
----
+### 3. Cálculo del ángulo del codo
 
-### 3. Obtención del ángulo del codo
+Aplicando la ley del coseno al triángulo formado por \(l_1\), \(l_2\) y \(H\):
 
-Aplicando la ley del coseno al triángulo formado por los eslabones \(l_1\), \(l_2\) y la distancia \(H\):
-
-\[
+$$
 \cos(q_3)=
 \frac{H^2-l_1^2-l_2^2}
 {2l_1l_2}
-\]
+$$
 
-A partir de esta expresión se generan las dos soluciones geométricas:
+A partir de este valor se generan las dos soluciones geométricas (codo arriba y codo abajo):
 
-- Codo arriba.
-- Codo abajo.
-
-mediante
-
-\[
+$$
 q_3=
 \operatorname{atan2}
 \left(
 \pm\sqrt{1-\cos^2(q_3)},
 \cos(q_3)
 \right)
-\]
+$$
 
-Posteriormente se aplica el desplazamiento angular (offset) correspondiente al modelo DH del robot.
+Finalmente se aplica el offset definido por el modelo DH.
 
----
+$$
+q_3=q_3-\text{OFFSET}
+$$
 
 ### 4. Cálculo del hombro
 
-Se calcula primero el ángulo
+Se calcula el ángulo
 
-\[
+$$
+\gamma=q_3+\text{OFFSET}
+$$
+
+Posteriormente
+
+$$
 \beta=
 \operatorname{atan2}
-(r_w,z_w-d_1)
-\]
+\left(
+r_w,\,
+z_w-d_1
+\right)
+$$
 
-y posteriormente
+y
 
-\[
+$$
 \lambda=
 \operatorname{atan2}
 \left(
-l_2\sin\gamma,
-l_1+l_2\cos\gamma
+l_2\sin(\gamma),
+l_1+l_2\cos(\gamma)
 \right)
-\]
-
-donde
-
-\[
-\gamma=q_3+\text{OFFSET}
-\]
+$$
 
 Finalmente,
 
-\[
+$$
 q_2=
-(\beta-\lambda)+\text{OFFSET}-90^\circ
-\]
-
-Este término incorpora el offset propio del modelo DH utilizado para representar el eslabón en forma de "L".
-
----
+(\beta-\lambda)
++\text{OFFSET}
+-\frac{\pi}{2}
+$$
 
 ### 5. Cálculo de la muñeca
 
-La orientación del efector final se obtiene imponiendo
+La última articulación se obtiene imponiendo la orientación deseada del efector final.
 
-\[
+$$
 q_4=-\theta-q_2-q_3
-\]
-
-garantizando que la suma de las tres últimas articulaciones produzca la orientación solicitada del TCP.
-
----
+$$
 
 ### 6. Verificación de colisiones
 
-Cada solución obtenida se valida mediante la función `structure_clear()`.
+Cada solución calculada es evaluada mediante la función `structure_clear()`.
 
-Para ello se ejecuta nuevamente la cinemática directa utilizando la solución calculada y se obtiene la posición de:
+Para ello se ejecuta nuevamente la cinemática directa utilizando los ángulos obtenidos y se calcula la posición de:
 
-- hombro,
-- codo,
-- muñeca,
-- soporte final,
+- Hombro.
+- Codo.
+- Muñeca.
+- Soporte final.
 - TCP.
 
-Si alguno de estos puntos queda por debajo del plano del suelo considerando un margen de seguridad de 20 mm, la solución es descartada.
-
----
+Si cualquiera de estos puntos queda por debajo del plano del suelo considerando un margen de seguridad de **20 mm**, la solución es descartada.
 
 ### 7. Restricciones articulares
 
-Cada configuración obtenida se compara con los límites mecánicos del robot.
+Las soluciones restantes son comparadas con los límites mecánicos definidos para cada articulación.
 
-Las soluciones que excedan alguno de los límites son eliminadas.
-
----
+Aquellas que excedan alguno de los límites son eliminadas.
 
 ### 8. Selección de la solución
 
-Si existen varias soluciones válidas, se selecciona aquella cuya distancia euclidiana respecto a la configuración actual del robot sea mínima.
+Si existen varias soluciones válidas, se calcula la distancia euclidiana entre cada una de ellas y la configuración articular actual del robot.
 
-De esta forma se evita realizar movimientos innecesarios y se obtiene una trayectoria más suave.
-
----
+Se selecciona la solución cuya distancia sea mínima, reduciendo así el movimiento necesario para alcanzar el objetivo.
 
 ### 9. Movimiento del robot
 
-Finalmente se interpola linealmente entre la configuración actual y la configuración objetivo durante tres segundos.
+Finalmente se realiza una interpolación lineal entre la configuración actual y la configuración objetivo durante tres segundos.
 
 Cada interpolación se publica sobre el tópico
 
-```
+```text
 /pincher/command
 ```
 
 utilizando mensajes `sensor_msgs/JointState`, permitiendo visualizar el movimiento continuo del robot en RViz.
-
