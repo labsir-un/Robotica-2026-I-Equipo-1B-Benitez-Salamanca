@@ -492,3 +492,63 @@ Cada interpolación se publica sobre el tópico
 ```
 
 utilizando mensajes `sensor_msgs/JointState`, permitiendo visualizar el movimiento continuo del robot en RViz.
+
+### Posición 1
+
+**Coordenadas cartesianas:** (248.591 mm, 0.000 mm, 192.251 mm, 0°)
+
+**Coordenadas articulares obtenidas:** (0.00°, 0.00°, 0.00°, 0.00°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad12_E1.gif" width="700">
+</div>
+
+Se verifica que la cinemática inversa obtiene la configuración esperada para la posición de referencia del manipulador, alcanzando correctamente la posición y orientación solicitadas.
+
+### Posición 2
+
+**Coordenadas cartesianas:** (224.344 mm, 104.613 mm, 49.397 mm, 65°)
+
+**Coordenadas articulares obtenidas:** (25.00°, 25.00°, 20.00°, -20.00°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad12_E2.gif" width="700">
+</div>
+
+La solución calculada corresponde a la configuración deseada, reproduciendo correctamente tanto la posición del TCP como su orientación.
+
+### Posición 3
+
+**Coordenadas cartesianas:** (228.177 mm, -159.771 mm, 80.267 mm, 35°)
+
+**Coordenadas articulares obtenidas:** (-35.00°, 35.00°, -30.00°, 30.00°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad12_E3.gif" width="700">
+</div>
+
+La cinemática inversa selecciona una configuración válida dentro de los límites articulares, alcanzando el objetivo especificado.
+
+### Posición 4
+
+**Coordenadas cartesianas:** (11.982 mm, 136.956 mm, 42.465 mm, -60°)
+
+**Coordenadas articulares obtenidas:** (85.00°, -20.00°, 55.00°, 25.00°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad12_E4.gif" width="700">
+</div>
+
+Se obtiene una solución factible que satisface simultáneamente la posición y la orientación requeridas del efector final.
+
+### Posición 5
+
+**Coordenadas cartesianas:** (29.238 mm, 165.816 mm, 208.089 mm, -25°)
+
+**Coordenadas articulares obtenidas:** (80.00°, -35.00°, 55.00°, -45.00°)
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad12_E5.gif" width="700">
+</div>
+
+La solución obtenida permite alcanzar el objetivo solicitado respetando las restricciones geométricas y los límites articulares definidos para el manipulador.
