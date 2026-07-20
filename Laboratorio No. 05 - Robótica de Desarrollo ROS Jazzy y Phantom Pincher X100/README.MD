@@ -367,6 +367,11 @@ La salida corresponde a los cuatro ángulos articulares del manipulador:
 
 ### 1. Cálculo de la articulación de la base
 
+<div align="center">
+    <img src="Diagramas-Imágenes/Inversa1.jpeg" width="700">
+</div>
+
+
 La primera articulación orienta el manipulador hacia el punto solicitado sobre el plano XY.
 
 $$
@@ -390,6 +395,11 @@ $$
 $$
 z_w = P_z - l_3 \sin(\theta)
 $$
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Inversa2.jpeg" width="700">
+</div>
+
 
 Con estas coordenadas se obtiene la distancia entre el hombro y el centro de la muñeca.
 
