@@ -627,7 +627,7 @@ Durante la reproducción, el programa lee las poses registradas respetando el or
 Permite registrar la configuración articular actual del robot y asignarle un nombre para almacenarla en el archivo `poses.yaml`.
 
 <div align="center">
-    <img src="Diagramas-Imágenes/Actividad13_guardar.gif" width="700">
+    <img src="Diagramas-Imágenes/Actividad13_Guardar.gif" width="700">
 </div>
 
 ### Listar poses
@@ -636,6 +636,14 @@ Muestra todas las poses registradas junto con sus coordenadas articulares en rad
 
 <div align="center">
     <img src="Diagramas-Imágenes/Actividad13_listar.gif" width="700">
+</div>
+
+### Ir a posición
+
+Permite llevar al robot a una de las posiciones articulares almacenadas en el archivo `poses.yaml`.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad13_Ir.gif" width="700">
 </div>
 
 ### Consultar la posición actual
@@ -675,5 +683,5 @@ Elimina una pose previamente registrada tanto de la memoria del programa como de
 Interrumpe la ejecución de la secuencia de poses en cualquier instante.
 
 <div align="center">
-    <img src="Diagramas-Imágenes/Actividad13_stop_salir.gif" width="700">
+    <img src="Diagramas-Imágenes/Actividad13_Stop_Salir.gif" width="700">
 </div>
