@@ -203,6 +203,7 @@ donde \(q_0\) corresponde a la posición inicial de la articulación, \(A\) es l
 <p align="center">
   <img src="Diagramas-Imágenes/act_10.gif" width="700">
 </p>
+
 ## Actividad 11. Cinemática directa
 
 La cinemática directa del robot Phantom X Pincher se implementó utilizando la convención clásica de Denavit–Hartenberg (DH). El anáisis se realiza mediante la siguiente convención de sistemas coordenados.
@@ -724,6 +725,23 @@ Interrumpe la ejecución de la secuencia de poses en cualquier instante.
     <img src="Diagramas-Imágenes/Actividad13_Stop_Salir.gif" width="700">
 </div>
 
+## actividad 14. Trazado de una Figura
+
+
+ara la generación de la trayectoria circular se desarrolló un nodo en Python que calcula una secuencia de puntos cartesianos pertenecientes a una circunferencia definida por un centro y un radio. Para cada punto se resuelve la cinemática inversa del robot utilizando sus parámetros de Denavit-Hartenberg (DH), obteniendo los ángulos articulares correspondientes. Posteriormente, estas configuraciones se publican de forma continua en el tópico `/pincher/command`, permitiendo que el robot describa una trayectoria circular suave en RViz. Este enfoque facilita la implementación de trayectorias en el espacio cartesiano y puede extenderse fácilmente a otras figuras modificando únicamente los puntos que describen la trayectoria.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/act_14.gif" width="700">
+</div>
+
+## actividad 15. Trazado de una Figura
+
+
+Para la coreografía se desarrolló un nodo en Python que ejecuta una secuencia de posiciones articulares predefinidas mediante interpolación lineal entre cada una de ellas, logrando movimientos suaves y continuos del robot. La secuencia inicia y finaliza en una posición segura, e involucra las articulaciones de la base, hombro, codo, muñeca y pinza. Antes de comenzar la ejecución, el programa realiza una cuenta regresiva para facilitar la sincronización con la reproducción de la canción. Posteriormente, las poses se ejecutan de forma automática durante aproximadamente 48 segundos, cumpliendo con la duración mínima requerida y sin necesidad de intervención del usuario una vez iniciada la rutina.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/act_14.gif" width="700">
+</div>
 
 ## Conclusiones
 
