@@ -188,9 +188,11 @@ El código de `trajectory_lib.py` implementa tres formas de generar el movimient
 <p align="center">
   <img src="Diagramas-Imágenes/act_9.gif" width="700">
 </p>
+
 ## Actividad 10.  rayectoria sinusoidal de una articulación
 
 Para implementar la trayectoria sinusoidal se desarrolló un nodo en Python que genera una referencia articular de acuerdo con la expresión:
+
 
 \[
 q(t)=q_0+A\sin(2\pi ft)
