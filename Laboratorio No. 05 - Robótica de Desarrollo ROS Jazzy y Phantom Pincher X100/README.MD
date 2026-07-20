@@ -70,6 +70,9 @@ El esquema que permite conocer con mayor facilidad las distancias entre juntas, 
 <h3>Actividad 4. Determinación de límites seguros</h3>
 para realizar esta actividad se creo un script el cual funciona como un menú donde por consola se escoge la articualción que se va a mover, luego de esto se le da el angulo que se quiere mover en radianes, esto se puede ver en el sigueinte video:
 
+<p align="center">
+  <img src="Diagramas-Imágenes/act_4.gif" width="700">
+</p>
 <h3>Actividad 6. Determinación de límites seguros</h3>
 
 <p>
@@ -171,10 +174,33 @@ Se implementó el desplazamiento simultáneo de las cinco articulaciones del rob
 </p>
 
 ## Actividad 8.  Movimiento secuencial
-Para dar solución a esto se reuso el script que se uso para la actividad número 5, se escogio el desplazamiento numero 5 ( 80, −35, 55, −45, 0.) y como se puede observar en el video se haciendo el movimiento secuencial se llega al mismo lugar
+Para dar solución a esto se reuso el script que se uso para la actividad número 5, se escogio el desplazamiento numero 5 ( 80, −35, 55, −45, 0.) y como se puede observar en el video se haciendo el movimiento secuencial se llega al mismo lugar, pero se nota una diferencia clara en los tiempo de ejecución y en la fluidez del movimiento, siendo el simultaneo el que mejor se desempeño
 
 
+<p align="center">
+  <img src="Diagramas-Imágenes/act_8.gif" width="700">
+</p>
 
+## Actividad 9.  Interpolación de trayectorias
+El código de `trajectory_lib.py` implementa tres formas de generar el movimiento entre dos posiciones articulares. La interpolación lineal calcula la posición como una simple proporción del tiempo transcurrido (`q0 + (qf-q0)*t/tf`), lo que da velocidad constante pero un cambio brusco de velocidad al inicio y al final. La cúbica usa un polinomio de tercer grado cuyos coeficientes se resuelven para que la velocidad sea cero en ambos extremos, logrando un arranque y frenado suaves, aunque la aceleración todavía cambia de golpe en esos puntos. La quíntica extiende esto a un polinomio de quinto grado que además fija la aceleración en cero en los extremos, produciendo la trayectoria más suave de las tres. Las tres funciones devuelven posición, velocidad y aceleración evaluadas en el tiempo, y `generate_multijoint_trajectory` simplemente las aplica a cada una de las 5 articulaciones a la vez.
+
+
+<p align="center">
+  <img src="Diagramas-Imágenes/act_9.gif" width="700">
+</p>
+## Actividad 10.  rayectoria sinusoidal de una articulación
+
+Para implementar la trayectoria sinusoidal se desarrolló un nodo en Python que genera una referencia articular de acuerdo con la expresión:
+
+\[
+q(t)=q_0+A\sin(2\pi ft)
+\]
+
+donde \(q_0\) corresponde a la posición inicial de la articulación, \(A\) es la amplitud y \(f\) la frecuencia de la señal. Durante la ejecución, el nodo publica continuamente la posición deseada en el tópico `/pincher/command`, mientras recibe la posición medida desde `/joint_states`. Con ambas señales se registran los datos necesarios para generar la gráfica de posición deseada y posición medida, además de calcular el error máximo y el error cuadrático medio (RMSE), permitiendo evaluar el desempeño del seguimiento de la trayectoria.
+
+<p align="center">
+  <img src="Diagramas-Imágenes/act_10.gif" width="700">
+</p>
 ## Actividad 11. Cinemática directa
 
 La cinemática directa del robot Phantom X Pincher se implementó utilizando la convención clásica de Denavit–Hartenberg (DH). El anáisis se realiza mediante la siguiente convención de sistemas coordenados.
