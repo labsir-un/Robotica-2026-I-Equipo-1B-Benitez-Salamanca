@@ -619,3 +619,61 @@ Cada pose almacena las cinco coordenadas articulares del manipulador en radianes
 El nodo obtiene continuamente la configuración articular del robot mediante el tópico `/joint_states`. Cuando el usuario ejecuta el comando `guardar`, la configuración actual se almacena en memoria y posteriormente se escribe en el archivo YAML.
 
 Durante la reproducción, el programa lee las poses registradas respetando el orden de almacenamiento y genera una interpolación lineal entre configuraciones articulares, publicando las posiciones sobre el tópico `/pincher/command`. De esta forma el movimiento entre poses es continuo y el tiempo de transición puede modificarse por el usuario.
+
+
+
+### Guardar una pose
+
+Permite registrar la configuración articular actual del robot y asignarle un nombre para almacenarla en el archivo `poses.yaml`.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad13_guardar.gif" width="700">
+</div>
+
+### Listar poses
+
+Muestra todas las poses registradas junto con sus coordenadas articulares en radianes y grados.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad13_listar.gif" width="700">
+</div>
+
+### Consultar la posición actual
+
+Obtiene la configuración articular actual del robot a partir del tópico `/joint_states`.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad13_actual.gif" width="700">
+</div>
+
+### Reproducir poses
+
+Ejecuta todas las poses almacenadas respetando el orden en que fueron registradas, realizando una interpolación lineal entre cada una de ellas.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad13_reproducir.gif" width="700">
+</div>
+
+### Modificar el tiempo de transición
+
+Permite cambiar el tiempo empleado para desplazarse entre dos poses consecutivas durante la reproducción.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad13_tiempo.gif" width="700">
+</div>
+
+### Eliminar una pose
+
+Elimina una pose previamente registrada tanto de la memoria del programa como del archivo `poses.yaml`.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad13_eliminar.gif" width="700">
+</div>
+
+### Detener la reproducción
+
+Interrumpe la ejecución de la secuencia de poses en cualquier instante.
+
+<div align="center">
+    <img src="Diagramas-Imágenes/Actividad13_stop_salir.gif" width="700">
+</div>
