@@ -695,3 +695,14 @@ Interrumpe la ejecución de la secuencia de poses en cualquier instante.
 <div align="center">
     <img src="Diagramas-Imágenes/Actividad13_Stop_Salir.gif" width="700">
 </div>
+
+
+## Conclusiones
+
+- Se implementó la cinemática directa e inversa del manipulador Phantom utilizando la convención de Denavit–Hartenberg, obteniendo un modelo capaz de relacionar las variables articulares con la posición y orientación del efector final.
+
+- La validación de los algoritmos en ROS 2 y RViz permitió comprobar el correcto funcionamiento del modelo cinemático, obteniendo resultados coherentes con el comportamiento esperado del robot en simulación.
+
+- La integración de los modelos matemáticos con el control del manipulador permitió ejecutar trayectorias a partir de configuraciones articulares calculadas, demostrando la aplicabilidad de la cinemática en tareas de posicionamiento.
+
+- El desarrollo de la práctica puso de manifiesto la importancia de una adecuada definición de los sistemas de referencia, los parámetros geométricos y los sentidos de giro de las articulaciones para obtener un modelo consistente con la geometría real del manipulador.
